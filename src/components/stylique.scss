@@ -1,0 +1,63 @@
+.stylique {
+  width: 100%;
+  min-height: 100vh;
+  background: white;
+}
+.main-header {
+  padding: 5vmin 0 5vmin 0;
+  .subHeader1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 80px 0 80px;
+    .logo {
+      color: #e5324b;
+      margin: 0 20px 20px 0;
+      font-size: 4vmin;
+    }
+    .subHeader1-menu {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      .subHeader1-menu-button {
+        margin: 0 16px 0 0;
+        background-color: transparent;
+        border: none;
+        color: #e3e3e3;
+        transition-duration: 0.5s;
+        font-size: 3vmin;
+      }
+      .subHeader1-menu-button:active,
+      .subHeader1-menu-button:focus,
+      .subHeader1-menu-button:hover {
+        color: black;
+      }
+      .register {
+        .register-button {
+          color: #191919;
+          font-size: 3vmin;
+          font-weight: 500;
+          border: 1px solid transparent;
+          background-color: transparent;
+          width: 20vmin;
+          height: 8vmin;
+          transition-duration: 0.5s;
+        }
+        .register-button:focus,
+        .register-button:active,
+        .register-button:hover {
+          background-color: transparent;
+          border: 1px solid black;
+          font-weight: 100;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .subHeader1 {
+    padding: 0 40px 0 40px;
+  }
+}

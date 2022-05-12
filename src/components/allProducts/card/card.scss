@@ -1,0 +1,20 @@
+.card-details{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 5vmin;
+    font-size: 4vmin;
+}
+
+.products-images-gallery{
+    margin-top: 10px;
+    .products-images-gallery-img{
+        width: 35vmin;
+        height: 30vmin;
+        object-fit: cover;
+        margin-right: 2vmin;
+    }
+}
