@@ -7,6 +7,18 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
+        {/* <div className="container">
+          <div className="row">
+            <button className="but">hello</button>
+            <button className="but">hello</button>
+            <button className="but">hello</button>
+            <button className="but">hello</button>
+            <button className="but">hello</button>
+            <button className="but">hello</button>
+            <button className="but">hello</button>
+            <button className="but">hello</button>
+          </div>
+        </div> */}
         <Stylique />
       </div>
     </Provider>

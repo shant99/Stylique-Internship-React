@@ -37,7 +37,7 @@ function AllProducts() {
             <p className="all-products-header-line"></p>
           </header>
 
-          <div className="all-products-menu">
+          <div className="allproducts-menu-container">
             <div className="all-products-menu-nav">
               <Button name="Ambient" className="all-products-menu-button" />
               <Button name="Red" className="all-products-menu-button" />
