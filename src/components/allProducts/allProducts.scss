@@ -47,11 +47,12 @@
     flex-wrap: nowrap;
   }
   .all-products-menu-button {
+    padding: 0 10px 0 10px;
     width: 30vmin;
     height: 7vmin;
     border: 1px solid #e3e3e3;
     background-color: transparent;
-    font-size: 3vmin;
+    font-size: 2vmin;
     transition-duration: 0.5s;
   }
   .all-products-menu-button:active,
@@ -111,4 +112,8 @@
     }
 }
 
-
+@media(min-width: 100px) and (max-width: 1200px){
+  .all-products-menu-button{
+    font-size: 1vmin;
+  }
+}
