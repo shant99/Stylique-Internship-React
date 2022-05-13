@@ -73,7 +73,9 @@ function AllProducts() {
                           );
                         })}
                       </div>
-                      <p className="card-description">{item.description}</p>
+                      <p className="card-description">{item.description.length < 70? item.description
+                      : item.description.slice(0 , 70).concat('...')
+                      }</p>
                       <p className="card-price">
                         {item.price} € / {item.selling_unit}
                       </p>
