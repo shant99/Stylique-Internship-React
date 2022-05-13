@@ -75,7 +75,7 @@ function AllProducts() {
                       </div>
                       <p className="card-description">{item.description}</p>
                       <p className="card-price">
-                        {item.price}€/{item.selling_unit}
+                        {item.price} € / {item.selling_unit}
                       </p>
                     </div>
                   );

@@ -56,9 +56,11 @@
     .allproducts-cards-column{
       display: flex;
       flex-wrap: wrap;
+      margin-left: -10px;
+      margin-right: -10px;
       .card{
-        width: 30%;
-        margin: 20px 8px 0 0;
+        width: 33.333%;
+        padding: 20px 10px 0 10px ;
         overflow: hidden;
         text-overflow: ellipsis;
         padding-bottom: 5px;
@@ -73,7 +75,7 @@
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          font-size: 2vmin;
+          font-size: 14px;
         }
         .card-button-div{
           display: flex;
@@ -85,19 +87,19 @@
             border: none;
             padding: 4px 10px;
             margin: 4px 4px 4px 0;
-            font-size: 2vmin;
+            font-size: 14px;
           }
         }
         .card-description{
-          width: 100%;
-          // white-space: nowrap;
+          width: 100%;  
+          line-height: 24px;
           overflow: hidden;
           text-overflow: ellipsis;
-          font-size: 2vmin;
+          font-size: 14px;
           margin-bottom: 8px;
         }
         .card-price{
-          font-size: 2vmin;
+          font-size: 14px;
         }
       }
     }
@@ -119,6 +121,9 @@
   }
   .card-button{
     font-size: 2.4vmin;
+  }
+  .card-price{
+    font-size: 5px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px){
