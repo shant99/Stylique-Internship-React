@@ -30,54 +30,57 @@ function AllProducts() {
       {cardOpen ? (
         <Card cardDetails={cardDetails} productsArray={productsArray} />
       ) : (
-        <div className="all-products">
-          <header className="all-products-header">
-            <p className="all-products-header-logo">STYLIQUE</p>
-            <p className="all-products-header-item">All products</p>
-            <p className="all-products-header-line"></p>
-          </header>
-
-          <div className="allproducts-menu-container">
-            <div className="all-products-menu-nav">
-              <Button name="Ambient" className="all-products-menu-button" />
-              <Button name="Red" className="all-products-menu-button" />
-              <Button name="Classic" className="all-products-menu-button" />
-              <Button name="Modern" className="all-products-menu-button" />
-              <Button name="New Houses" className="all-products-menu-button" />
-              <Button name="Minimal" className="all-products-menu-button" />
-              <Button name="Yellow" className="all-products-menu-button" />
-              <Button name="Fi" className="all-products-menu-button" />
+        <div className="allproducts">
+          <div className="allproducts-header-container">
+            <div className="allproducts-header-column">
+              <p className="allproducts-header-logo">STYLIQUE</p>
+              <div>
+                <p className="allproducts-header-item">All products</p>
+                <p className="allproducts-header-line"></p>
+              </div>
             </div>
           </div>
 
-          <div className="allproducts-cards-container">
-            <div className="allproducts-cards">
-              {productsArray.map((item, index) => {
-                return (
-                  <div
-                    className="card"
-                    key={index}
-                    onClick={(e) => cardHandler(e, item)}
-                  >
-                    <img src={item.img_url} alt="a" className="card-img" />
-                    <p className="card-productname">{item.productname}</p>
+          <div className="allproducts-main">
+            <div className="allproducts-container">
+              <div className="allproducts-menu-column">
+                <Button name="Ambient" className="allproducts-menu-button" />
+                <Button name="Red" className="allproducts-menu-button" />
+                <Button name="Classic" className="allproducts-menu-button" />
+                <Button name="Modern" className="allproducts-menu-button" />
+                <Button name="New Houses" className="allproducts-menu-button" />
+                <Button name="Minimal" className="allproducts-menu-button" />
+                <Button name="Yellow" className="allproducts-menu-button" />
+                <Button name="Fi" className="allproducts-menu-button" />
+              </div>
+              <div className="allproducts-cards-column">
+                {productsArray.map((item, index) => {
+                  return (
+                    <div
+                      className="card"
+                      key={index}
+                      onClick={(e) => cardHandler(e, item)}
+                    >
+                      <img src={item.img_url} alt="a" className="card-img" />
+                      <p className="card-productname">{item.productname}</p>
 
-                    <div className="card-button-div">
-                      {tagname.map((itm, ind) => {
-                        return (
-                          <button key={ind} className="card-button">
-                            {itm["tagname"]}
-                          </button>
-                        );
-                      })}
+                      <div className="card-button-div">
+                        {tagname.map((itm, ind) => {
+                          return (
+                            <button key={ind} className="card-button">
+                              {itm["tagname"]}
+                            </button>
+                          );
+                        })}
+                      </div>
+                      <p className="card-description">{item.description}</p>
+                      <p className="card-price">
+                        {item.price}€/{item.selling_unit}
+                      </p>
                     </div>
-                    <p className="card-description">{item.description}</p>
-                    <p className="card-price">
-                      {item.price}€/{item.selling_unit}
-                    </p>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>

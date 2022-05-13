@@ -8,7 +8,7 @@ function Stylique() {
   const allProductsHandler = () => setOpenAllProducts(prev => !prev);
   return (
     <>
-      {openAllProducts ? (
+      {/* {openAllProducts ? (
         <div className="stylique">
           <header className="main-header">
 
@@ -29,9 +29,9 @@ function Stylique() {
 
           </header>
         </div>
-      ) : (
+      ) : ( */}
         <AllProducts />
-      )}
+      {/* // )} */}
     </>
   );
 }

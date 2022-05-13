@@ -11,7 +11,7 @@ function Card({cardDetails , productsArray }){
             <p>Products images gallery</p>
             <div className='products-images-gallery'>
                 {productsArray.map((item , index)=>{
-                    return <img src={item.img_url} alt="a" className='products-images-gallery-img'/>
+                    return <img src={item.img_url} alt="a" key={index} className='products-images-gallery-img'/>
                 })}
             </div>
         </div>
