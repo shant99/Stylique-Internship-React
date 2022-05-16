@@ -12,8 +12,7 @@ function Stylique() {
   const URL = "https://api.jsonbin.io/b/627b6d5525069545a3322906";
   const URL_TAGNAME = "https://api.jsonbin.io/b/627b6f3a019db467969aa57e/2";
 
-  // let match = useLocation()
-  // console.log(match)
+
   useEffect(() => {
     fetch(URL)
       .then((data) => data.json())

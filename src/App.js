@@ -1,5 +1,5 @@
 import { Provider } from "react-redux";
-import { BrowserRouter , Routes , Route } from "react-router-dom";
+import { BrowserRouter , Routes , Route, Navigate } from "react-router-dom";
 import "./App.scss";
 import Card from "./components/allProducts/card/Card";
 import Stylique from "./components/Stylique";
@@ -15,8 +15,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route exact path="/" element={<Stylique />}></Route>
-            <Route path='/card' element={<Card  /> } />
-            <Route  path="*" element={<Stylique />}></Route>
+            <Route path='/card/:name' element={<Card  /> } />
+            <Route exact path="/*" element={<Navigate to='/' />}></Route>
           </Routes>
         </BrowserRouter>
       </div>

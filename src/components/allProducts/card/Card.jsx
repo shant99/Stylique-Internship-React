@@ -1,8 +1,12 @@
 import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import "./card.scss";
 
 function Card() {
   let {cardDetails} = useSelector(state => state.reducerOne)
+
+  let {name} = useParams();
+  console.log(name)
   return (
     <div className="card-details">
       <div className="card-details-container">
