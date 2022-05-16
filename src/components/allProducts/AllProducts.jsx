@@ -2,40 +2,32 @@ import "./allProducts.scss";
 import { useState, useEffect } from "react";
 import Card from "./card/Card";
 import Button from "../../UI/Button";
+import FolderPlus from "../../Icons/FolderPlus";
+import StyliqueLogo from "../../Icons/StyliqueLogo";
+import { useDispatch, useSelector } from "react-redux";
+import { NavLink, useLocation } from "react-router-dom";
+import { setCardDetails } from "../../redux/slice/reducerOne";
 
 function AllProducts() {
-  const [productsArray, setProductsArray] = useState([]);
-  const [tagname, setTagname] = useState([]);
-  const [cardOpen, setCardOpen] = useState(false);
-  const [cardDetails, setCardDetails] = useState({});
-
-  const URL = "https://api.jsonbin.io/b/627b6d5525069545a3322906";
-  const URL_TAGNAME = "https://api.jsonbin.io/b/627b6f3a019db467969aa57e";
+  let { products ,tagname } = useSelector((state) => state.reducerOne);
+  const dispatch = useDispatch();
+  let url = useLocation()
 
   const cardHandler = (e, item) => {
-    setCardDetails(item);
-    setCardOpen((prev) => !prev);
+    dispatch(setCardDetails({cardDetails: item})) 
   };
 
-  useEffect(() => {
-    fetch(URL)
-      .then((data) => data.json())
-      .then((res) => setProductsArray(res.products));
-    fetch(URL_TAGNAME)
-      .then((data) => data.json())
-      .then((res) => setTagname(res));
-  }, []);
+
   return (
     <>
-      {cardOpen ? (
-        <Card cardDetails={cardDetails} productsArray={productsArray} />
-      ) : (
         <div className="allproducts">
           <div className="allproducts-header-container">
             <div className="allproducts-header-column">
-              <p className="allproducts-header-logo">STYLIQUE</p>
+              <span className="allproducts-header-logo">
+                <StyliqueLogo />
+              </span>
               <div>
-                <p className="allproducts-header-item">All products</p>
+                <p className="allproducts-header-item">ALL Products</p>
                 <p className="allproducts-header-line"></p>
               </div>
             </div>
@@ -54,14 +46,18 @@ function AllProducts() {
                 <Button name="Fi" className="allproducts-menu-button" />
               </div>
               <div className="allproducts-cards-column">
-                {productsArray.map((item, index) => {
+                {products.map((item, index) => {
                   return (
                     <div
+                    to={`${url.pathname}/card`}
                       className="card"
                       key={index}
-                      onClick={(e) => cardHandler(e, item)}
+                      onClick={(e) =>cardHandler(e, item) }
                     >
-                      <img src={item.img_url} alt="a" className="card-img" />
+                      <span className="folderplus">
+                        <FolderPlus />
+                      </span>
+                      <NavLink to={url.pathname + 'card'}><img src={item.img_url} alt="a" className="card-img" /></NavLink>
                       <p className="card-productname">{item.productname}</p>
 
                       <div className="card-button-div">
@@ -73,11 +69,13 @@ function AllProducts() {
                           );
                         })}
                       </div>
-                      <p className="card-description">{item.description.length < 70? item.description
-                      : item.description.slice(0 , 70).concat('...')
-                      }</p>
+                      <p className="card-description">
+                        {item.description.length < 70
+                          ? item.description
+                          : item.description.slice(0, 70).concat("...")}
+                      </p>
                       <p className="card-price">
-                        {item.price} € / {item.selling_unit}
+                        Ab {item.price} € / {item.selling_unit}
                       </p>
                     </div>
                   );
@@ -86,7 +84,6 @@ function AllProducts() {
             </div>
           </div>
         </div>
-      )}
     </>
   );
 }

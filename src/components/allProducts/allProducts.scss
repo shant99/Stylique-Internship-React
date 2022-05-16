@@ -1,6 +1,7 @@
 .allproducts {
   width: 100%;
   min-height: 100vh;
+  font-family: 'Abel', sans-serif;
 }
 .allproducts-header-container {
   width: 100%;
@@ -16,7 +17,7 @@
       font-size: 150%;
     }
     .allproducts-header-item {
-      margin: 24px 0 6px 0;
+      margin: 14px 0 6px 0;
       padding: 5px 0;
     }
     .allproducts-header-line {
@@ -45,6 +46,7 @@
         padding: 12px 30px;
         margin-right: 8px;
         white-space: nowrap;
+        font-family: 'Abel', sans-serif;
       }
       .allproducts-menu-button:hover,
       .allproducts-menu-button:focus,
@@ -59,11 +61,15 @@
       margin-left: -10px;
       margin-right: -10px;
       .card{
+        position: relative;
         width: 33.333%;
         padding: 20px 10px 0 10px ;
         overflow: hidden;
         text-overflow: ellipsis;
-        padding-bottom: 5px;
+        padding-bottom: 46px;
+        color: #191919;
+        font-weight: 400;
+        cursor: pointer;
         .card-img{
           width: 100%;
           height: 277px;
@@ -76,6 +82,7 @@
           overflow: hidden;
           text-overflow: ellipsis;
           font-size: 14px;
+          padding-bottom: 5px;
         }
         .card-button-div{
           display: flex;
@@ -88,6 +95,8 @@
             padding: 4px 10px;
             margin: 4px 4px 4px 0;
             font-size: 14px;
+            color: #191919;
+            font-family: 'Abel', sans-serif;
           }
         }
         .card-description{
@@ -106,7 +115,20 @@
   }
 
 }
-
+.folderplus{
+  background-color: rgba(255, 255, 255, 0.2) ;
+  position: absolute;
+  top: 36px;
+  right: 26px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.folderplus:hover{
+  border: 1px solid  rgb(255, 255, 255);
+}
 @media (min-width: 10px) and (max-width: 300px){
   .card{
     min-width: 50%;
