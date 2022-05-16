@@ -89,7 +89,7 @@ function AllProducts() {
                       <p className="card-productname">{item.productname}</p>
 
                       <div className="card-button-div">
-                        <button className="card-button">{item.tags}</button> :
+                        <button className="card-button">{item.tags}</button> 
                       </div>
                       <p className="card-description">
                         {item.description.length < 70
