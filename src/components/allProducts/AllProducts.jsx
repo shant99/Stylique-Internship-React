@@ -8,14 +8,12 @@ import { setCardDetails } from "../../redux/slice/reducerOne";
 import { useState } from "react";
 import { Spin } from "antd";
 import { CARD_DETAILS } from "../../config/actions";
-// import { TransitionGroup } from 'react-transition-group'
-// import { Transition } from "react-transition-group";
 
 function AllProducts() {
   let { products, tagname } = useSelector((state) => state.reducerOne);
   let [productsFilter, setProductsFilter] = useState({
     tagname: [],
-    filterProducts: false,
+    filterProducts: true,
   });
   const dispatch = useDispatch();
   let url = useLocation();
@@ -24,7 +22,7 @@ function AllProducts() {
   const cardHandler = (e, item) => {
     dispatch(setCardDetails({ cardDetails: item }));
     navigate("card/" + item.productname.split(" ").join(""));
-    localStorage.setItem(CARD_DETAILS , JSON.stringify(item))
+    localStorage.setItem(CARD_DETAILS, JSON.stringify(item));
   };
 
   const tagsnameButtonHandler = (e, item) => {
@@ -34,15 +32,17 @@ function AllProducts() {
         .split(" ")
         .includes("tagsnameActive");
       const tagnameArr = prev.tagname;
+      const newTagnameArr = !is_tagsnameActive
+      ? tagnameArr.filter((i) => i !== item.tagname).sort()
+      : [...tagnameArr, item.tagname]
+      console.log(newTagnameArr)
       return {
-        tagname: !is_tagsnameActive
-          ? tagnameArr.filter((i) => i !== item.tagname)
-          : [...tagnameArr, item.tagname],
-        filterProducts: prev.tagname.length ? true : false,
+        tagname: newTagnameArr,
+        filterProducts:  newTagnameArr.length  ? false : true,
       };
     });
   };
-  // console.log(tagname);
+
   return (
     <>
       <div className="allproducts">
@@ -80,9 +80,13 @@ function AllProducts() {
             <div className="allproducts-cards-column">
               {products.length ? (
                 [
-                  //  productsFilter.filterProducts?
-                  products,
-                  //  : productsFilter.tagname,
+                  productsFilter.filterProducts
+                    ? products
+                    : products.filter(
+                        (itm) =>
+                          JSON.stringify(itm.tags.split(", ").sort()) ===
+                          JSON.stringify(productsFilter.tagname.sort())
+                      ),
                 ]
                   .flat(1)
                   .map((item, index) => {
@@ -100,15 +104,11 @@ function AllProducts() {
                         <p className="card-productname">{item.productname}</p>
 
                         <div className="card-button-div">
-                          {Array.isArray(item.tags) ? (
-                            item.tags.map((tag, ind) => (
-                              <button className="card-button" key={ind}>
-                                {tag}
-                              </button>
-                            ))
-                          ) : (
-                            <button className="card-button">{item.tags}</button>
-                          )}
+                          {item.tags.split(", ").sort().map((tag, ind) => (
+                            <button className="card-button" key={ind}>
+                              {tag}
+                            </button>
+                          ))}
                         </div>
                         <p className="card-description">
                           {item.description.length < 70
