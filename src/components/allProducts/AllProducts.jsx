@@ -9,6 +9,7 @@ import { useState } from "react";
 import { Spin } from "antd";
 import { CARD_DETAILS } from "../../config/actions";
 
+
 function AllProducts() {
   let { products, tagname } = useSelector((state) => state.reducerOne);
   let [productsFilter, setProductsFilter] = useState({
