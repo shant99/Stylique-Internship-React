@@ -1,10 +1,10 @@
-import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+// import { useSelector } from "react-redux";
+// import { useParams } from "react-router-dom";
 import { CARD_DETAILS } from "../../../config/actions";
 import "./card.scss";
 
 function Card() {
-  let {cardDetails} = useSelector(state => state.reducerOne)
+  // let {cardDetails} = useSelector(state => state.reducerOne)
   let cardDetails_LS = JSON.parse(localStorage.getItem(CARD_DETAILS))
 
   

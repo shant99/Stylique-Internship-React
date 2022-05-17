@@ -1,10 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import "./stylique.scss";
 import AllProducts from "./allProducts/AllProducts";
 import { useDispatch } from "react-redux";
 import { setProducts, setTagname } from "../redux/slice/reducerOne";
 import { CARDS_API, TAGNAMES_API } from "../config/actions";
-import { TransitionGroup } from 'react-transition-group'
+
 
 function Stylique() {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ function Stylique() {
     fetch(TAGNAMES_API)
       .then((data) => data.json())
       .then((res) => dispatch(setTagname({ tagname: res })));
+ 
   }, []);
   return (
     <>

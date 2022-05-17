@@ -6,9 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { setCardDetails } from "../../redux/slice/reducerOne";
 import { useState } from "react";
-import { Spin } from "antd";
 import { CARD_DETAILS } from "../../config/actions";
-
+import CircularProgress from "@mui/material/CircularProgress";
 
 function AllProducts() {
   let { products, tagname } = useSelector((state) => state.reducerOne);
@@ -34,12 +33,12 @@ function AllProducts() {
         .includes("tagsnameActive");
       const tagnameArr = prev.tagname;
       const newTagnameArr = !is_tagsnameActive
-      ? tagnameArr.filter((i) => i !== item.tagname).sort()
-      : [...tagnameArr, item.tagname]
-      console.log(newTagnameArr)
+        ? tagnameArr.filter((i) => i !== item.tagname).sort()
+        : [...tagnameArr, item.tagname];
+      console.log(newTagnameArr);
       return {
         tagname: newTagnameArr,
-        filterProducts:  newTagnameArr.length  ? false : true,
+        filterProducts: newTagnameArr.length ? false : true,
       };
     });
   };
@@ -62,32 +61,30 @@ function AllProducts() {
         <div className="allproducts-main">
           <div className="allproducts-container">
             <div className="allproducts-tagsname-column">
-              {tagname.length ? (
-                tagname.map((item, index) => (
-                  <Button
-                    key={index}
-                    name={item.tagname}
-                    className="allproducts-tagsname-button"
-                    onClick={(e) => tagsnameButtonHandler(e, item)}
-                  />
-                ))
-              ) : (
-                <Spin
-                  style={{ width: "100%", fontSize: "12px" }}
-                  tip="Loading..."
+              {tagname.map((item, index) => (
+                <Button
+                  key={index}
+                  name={item.tagname}
+                  className="allproducts-tagsname-button"
+                  onClick={(e) => tagsnameButtonHandler(e, item)}
                 />
-              )}
+              ))}
             </div>
             <div className="allproducts-cards-column">
               {products.length ? (
                 [
                   productsFilter.filterProducts
                     ? products
-                    : products.filter(
-                        (itm) =>
-                          JSON.stringify(itm.tags.split(", ").sort()) ===
-                          JSON.stringify(productsFilter.tagname.sort())
-                      ),
+                    : products.filter((itm) => {
+                        let tags = itm.tags.split(", ").sort();
+                        let cardTagname = productsFilter.tagname;
+                        let arr = cardTagname
+                          .map((a) => {
+                            if (tags.some((b) => a === b)) return a;
+                          })
+                          .filter((i) => i !== undefined);
+                        if (arr.length) return itm;
+                      }),
                 ]
                   .flat(1)
                   .map((item, index) => {
@@ -105,11 +102,14 @@ function AllProducts() {
                         <p className="card-productname">{item.productname}</p>
 
                         <div className="card-button-div">
-                          {item.tags.split(", ").sort().map((tag, ind) => (
-                            <button className="card-button" key={ind}>
-                              {tag}
-                            </button>
-                          ))}
+                          {item.tags
+                            .split(", ")
+                            .sort()
+                            .map((tag, ind) => (
+                              <button className="card-button" key={ind}>
+                                {tag}
+                              </button>
+                            ))}
                         </div>
                         <p className="card-description">
                           {item.description.length < 70
@@ -123,10 +123,9 @@ function AllProducts() {
                     );
                   })
               ) : (
-                <Spin
-                  style={{ width: "100%", fontSize: "12px" }}
-                  tip="Loading..."
-                />
+                <div className="progress">
+                  <CircularProgress />
+                </div>
               )}
             </div>
           </div>

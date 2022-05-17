@@ -4,7 +4,7 @@ import "./App.scss";
 import Card from "./components/allProducts/card/Card";
 import Stylique from "./components/Stylique";
 import store from "./redux/store";
-import 'antd/dist/antd.less';
+
 
 function App() {
   return (

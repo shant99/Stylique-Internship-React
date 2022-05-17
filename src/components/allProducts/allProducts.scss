@@ -29,14 +29,17 @@
     }
   }
 }
-
+.progress{
+  width: 100% ;
+   @include flex(center, center);
+  
+}
 .allproducts-main {
   @include flex(flex-start, center);
   flex-direction: column;
   .allproducts-container {
     width: 73%;
     .allproducts-tagsname-column {
-    
       display: flex;
       flex-wrap: nowrap;
       overflow-x: scroll;
