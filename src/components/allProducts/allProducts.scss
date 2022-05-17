@@ -1,18 +1,19 @@
-@import '../../scss/mixins.scss';
-@import '../../scss/variables.scss';
+@import "../../scss/mixins.scss";
+@import "../../scss/variables.scss";
 
 .allproducts {
   width: 100%;
   min-height: 100vh;
-  font-family: 'Abel', sans-serif;
+  font-family: "Abel", sans-serif;
 }
 .allproducts-header-container {
   width: 100%;
   padding: 40px 0 18px 0;
+
   .allproducts-header-column {
     width: 100%;
     box-shadow: 0px 2px 0px #e3e3e3;
-    @include flex(flex-end , center);
+    @include flex(flex-end, center);
     flex-direction: column;
     .allproducts-header-logo {
       font-size: 150%;
@@ -29,53 +30,83 @@
   }
 }
 
-.allproducts-main{
-  @include flex(flex-start , center);
+.allproducts-main {
+  @include flex(flex-start, center);
   flex-direction: column;
-  .allproducts-container{
+  .allproducts-container {
     width: 73%;
-    .allproducts-menu-column{
+    .allproducts-tagsname-column {
+      min-height: 50px;
       display: flex;
       flex-wrap: nowrap;
       overflow-x: scroll;
       margin-bottom: 24px;
-      .allproducts-menu-button{
+
+      .allproducts-tagsname-button {
         background-color: white;
-        border: 1px solid #D7D8DB;
+        border: 1px solid #d7d8db;
         padding: 12px 30px;
         margin-right: 8px;
         white-space: nowrap;
-        font-family: 'Abel', sans-serif;
+        font-family: "Abel", sans-serif;
+        animation-name: allproducts-tagsname-column;
+        animation-duration: 2s;
+        animation-timing-function: ease;
+        @keyframes allproducts-tagsname-column {
+          0% {
+            opacity: 0.5;
+            transform: translateY(-25px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0px);
+          }
+        }
       }
-      .allproducts-menu-button:hover,
-      .allproducts-menu-button:focus,
-      .allproducts-menu-button:active{
-        background-color: #E5324B;
+      .allproducts-tagsname-button:hover {
+        background-color: #e5324b;
+        color: white;
+      }
+      .tagsnameActive {
+        background-color: #e5324b;
         color: white;
       }
     }
-    .allproducts-cards-column{
+    .allproducts-cards-column {
       display: flex;
       flex-wrap: wrap;
       margin-left: -10px;
       margin-right: -10px;
-      .card{
+      .card {
         position: relative;
         width: 33.333%;
-        padding: 20px 10px 0 10px ;
+        padding: 20px 10px 0 10px;
         overflow: hidden;
         text-overflow: ellipsis;
         padding-bottom: 46px;
         color: #191919;
         font-weight: 400;
+        animation-name: allproducts-cards-column;
+        animation-duration: 2s;
+        animation-timing-function: ease;
+        @keyframes allproducts-cards-column {
+          0% {
+            opacity: 0.5;
+            transform: translateY(-25px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0px);
+          }
+        }
         cursor: pointer;
-        .card-img{
+        .card-img {
           width: 100%;
           height: 277px;
           object-fit: cover;
           margin-bottom: 12px;
         }
-        .card-productname{
+        .card-productname {
           width: 100%;
           white-space: nowrap;
           overflow: hidden;
@@ -83,81 +114,80 @@
           font-size: 14px;
           padding-bottom: 5px;
         }
-        .card-button-div{
+        .card-button-div {
           display: flex;
           flex-wrap: wrap;
           width: 100%;
           margin-bottom: 12px;
-          .card-button{
-            background-color: #F7F7F7;
+          .card-button {
+            background-color: #f7f7f7;
             border: none;
             padding: 4px 10px;
             margin: 4px 4px 4px 0;
             font-size: 14px;
             color: #191919;
-            font-family: 'Abel', sans-serif;
+            font-family: "Abel", sans-serif;
           }
         }
-        .card-description{
-          width: 100%;  
+        .card-description {
+          width: 100%;
           line-height: 24px;
           overflow: hidden;
           text-overflow: ellipsis;
           font-size: 14px;
           margin-bottom: 8px;
         }
-        .card-price{
+        .card-price {
           font-size: 14px;
         }
       }
     }
   }
-
 }
-.folderplus{
-  background-color: rgba(255, 255, 255, 0.2) ;
+.folderplus {
+  background-color: rgba(255, 255, 255, 0.2);
   position: absolute;
   top: 36px;
   right: 26px;
   width: 40px;
   height: 40px;
-  @include flex(center , center);
+  @include flex(center, center);
 }
-.folderplus:hover{
-  border: 1px solid  rgb(255, 255, 255);
+.folderplus:hover {
+  border: 1px solid rgb(255, 255, 255);
 }
-@media (min-width: 10px) and (max-width: 300px){
-  .card{
+@media (min-width: 10px) and (max-width: 300px) {
+  .card {
     min-width: 50%;
   }
-  .card-img{
+  .card-img {
     max-height: 77px;
   }
-  .card-button{
+  .card-button {
     font-size: 2.4vmin;
   }
 }
-@media (min-width: 300px) and (max-width: 768px){
-  .card{
+@media (min-width: 300px) and (max-width: 768px) {
+  .card {
     min-width: 50%;
   }
-  .card-img{
+  .card-img {
     max-height: 147px;
   }
-  .card-button{
+  .card-button {
     font-size: 2.4vmin;
   }
-  .card-price{
+  .card-price {
     font-size: 5px;
   }
 }
-@media (min-width: 768px) and (max-width: 991px){
-  .card-img{
+@media (min-width: 768px) and (max-width: 991px) {
+  .card-img {
     max-height: 127px;
   }
 }
-@media (min-width: 992px) and (max-width: 1200px){
-  .card-img{
+@media (min-width: 992px) and (max-width: 1200px) {
+  .card-img {
     max-height: 177px;
   }
 }

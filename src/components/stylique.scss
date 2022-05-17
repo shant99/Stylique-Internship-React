@@ -1,3 +1,23 @@
+.parent{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: shant;
+  animation-duration: 5s;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+@keyframes shant{
+  0%{
+    opacity: 0.5;
+    transform: translateY(10px);
+  }
+  100%{
+    // transform: translateX(10px);
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+}
+
 .stylique {
   width: 100%;
   min-height: 100vh;

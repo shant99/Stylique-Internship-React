@@ -3,14 +3,18 @@ import Button from "../../UI/Button";
 import FolderPlus from "../../Icons/FolderPlus";
 import StyliqueLogo from "../../Icons/StyliqueLogo";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { setCardDetails } from "../../redux/slice/reducerOne";
 import { useState } from "react";
+import { Spin } from "antd";
+import { CARD_DETAILS } from "../../config/actions";
+// import { TransitionGroup } from 'react-transition-group'
+// import { Transition } from "react-transition-group";
 
 function AllProducts() {
   let { products, tagname } = useSelector((state) => state.reducerOne);
   let [productsFilter, setProductsFilter] = useState({
-    tagname: null,
+    tagname: [],
     filterProducts: false,
   });
   const dispatch = useDispatch();
@@ -20,8 +24,25 @@ function AllProducts() {
   const cardHandler = (e, item) => {
     dispatch(setCardDetails({ cardDetails: item }));
     navigate("card/" + item.productname.split(" ").join(""));
+    localStorage.setItem(CARD_DETAILS , JSON.stringify(item))
   };
 
+  const tagsnameButtonHandler = (e, item) => {
+    e.target.classList.toggle("tagsnameActive");
+    setProductsFilter((prev) => {
+      const is_tagsnameActive = e.target.className
+        .split(" ")
+        .includes("tagsnameActive");
+      const tagnameArr = prev.tagname;
+      return {
+        tagname: !is_tagsnameActive
+          ? tagnameArr.filter((i) => i !== item.tagname)
+          : [...tagnameArr, item.tagname],
+        filterProducts: prev.tagname.length ? true : false,
+      };
+    });
+  };
+  // console.log(tagname);
   return (
     <>
       <div className="allproducts">
@@ -39,69 +60,73 @@ function AllProducts() {
 
         <div className="allproducts-main">
           <div className="allproducts-container">
-            <div className="allproducts-menu-column">
-              {tagname.map((item, index) => (
-                <Button
-                  name={item.tagname}
-                  key={index}
-                  className="allproducts-menu-button"
-                  onClick={() => {
-                    setProductsFilter((prev) => {
-                      return {
-                        tagname: item.tagname,
-                        filterProducts:
-                          item.tagname !== prev.tagname
-                            ? true
-                            : !prev.filterProducts,
-                      };
-                    });
-                  }}
+            <div className="allproducts-tagsname-column">
+              {tagname.length ? (
+                tagname.map((item, index) => (
+                  <Button
+                    key={index}
+                    name={item.tagname}
+                    className="allproducts-tagsname-button"
+                    onClick={(e) => tagsnameButtonHandler(e, item)}
+                  />
+                ))
+              ) : (
+                <Spin
+                  style={{ width: "100%", fontSize: "12px" }}
+                  tip="Loading..."
                 />
-              ))}
+              )}
             </div>
             <div className="allproducts-cards-column">
-              {[
-                !productsFilter.filterProducts
-                  ? products
-                  : products.filter((i) => i.tags === productsFilter.tagname),
-              ]
-                .flat(1)
-                .map((item, index) => {
-                  return (
-                    <div
-                      to={`${url.pathname}/card`}
-                      className="card"
-                      key={index}
-                      onClick={(e) => cardHandler(e, item)}
-                    >
-                      <span className="folderplus">
-                        <FolderPlus />
-                      </span>
-                      {/* <NavLink
-                      to={
-                        url.pathname +
-                        `card/` +
-                        item.productname.split(" ").join("")
-                      }
-                    > */}
-                      <img src={item.img_url} alt="a" className="card-img" />
-                      {/* </NavLink> */}
-                      <p className="card-productname">{item.productname}</p>
+              {products.length ? (
+                [
+                  //  productsFilter.filterProducts?
+                  products,
+                  //  : productsFilter.tagname,
+                ]
+                  .flat(1)
+                  .map((item, index) => {
+                    return (
+                      <div
+                        to={`${url.pathname}/card`}
+                        className="card"
+                        key={index}
+                        onClick={(e) => cardHandler(e, item)}
+                      >
+                        <span className="folderplus">
+                          <FolderPlus />
+                        </span>
+                        <img src={item.img_url} alt="a" className="card-img" />
+                        <p className="card-productname">{item.productname}</p>
 
-                      <div className="card-button-div">
-                        <button className="card-button">{item.tags}</button> 
+                        <div className="card-button-div">
+                          {Array.isArray(item.tags) ? (
+                            item.tags.map((tag, ind) => (
+                              <button className="card-button" key={ind}>
+                                {tag}
+                              </button>
+                            ))
+                          ) : (
+                            <button className="card-button">{item.tags}</button>
+                          )}
+                        </div>
+                        <p className="card-description">
+                          {item.description.length < 70
+                            ? item.description
+                            : item.description.slice(0, 70).concat("...")}
+                        </p>
+                        <p className="card-price">
+                          Ab {item.price} € / {item.selling_unit}
+                        </p>
                       </div>
-                      <p className="card-description">
-                        {item.description.length < 70
-                          ? item.description
-                          : item.description.slice(0, 70).concat("...")}
-                      </p>
-                      <p className="card-price">
-                        Ab {item.price} € / {item.selling_unit}
-                      </p>
-                    </div>
-                  );
-                })}
+                    );
+                  })
+              ) : (
+                <Spin
+                  style={{ width: "100%", fontSize: "12px" }}
+                  tip="Loading..."
+                />
+              )}
             </div>
           </div>
         </div>
