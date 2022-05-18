@@ -39,6 +39,19 @@
   flex-direction: column;
   .allproducts-container {
     width: 73%;
+            animation-name: allproducts-cards-column;
+        animation-duration: 2s;
+        animation-timing-function: ease;
+        @keyframes allproducts-cards-column {
+          0% {
+            opacity: 0.5;
+            transform: translateY(-25px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0px);
+          }
+        }
     .allproducts-tagsname-column {
       display: flex;
       flex-wrap: nowrap;
@@ -52,19 +65,19 @@
         margin-right: 8px;
         white-space: nowrap;
         font-family: "Abel", sans-serif;
-        animation-name: allproducts-tagsname-column;
-        animation-duration: 2s;
-        animation-timing-function: ease;
-        @keyframes allproducts-tagsname-column {
-          0% {
-            opacity: 0.5;
-            transform: translateY(-25px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0px);
-          }
-        }
+        // animation-name: allproducts-tagsname-column;
+        // animation-duration: 2s;
+        // animation-timing-function: ease;
+        // @keyframes allproducts-tagsname-column {
+        //   0% {
+        //     opacity: 0.5;
+        //     transform: translateY(-25px);
+        //   }
+        //   100% {
+        //     opacity: 1;
+        //     transform: translateY(0px);
+        //   }
+        // }
       }
       .allproducts-tagsname-button:hover {
         background-color: #e5324b;
@@ -89,19 +102,7 @@
         padding-bottom: 46px;
         color: #191919;
         font-weight: 400;
-        animation-name: allproducts-cards-column;
-        animation-duration: 2s;
-        animation-timing-function: ease;
-        @keyframes allproducts-cards-column {
-          0% {
-            opacity: 0.5;
-            transform: translateY(-25px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0px);
-          }
-        }
+
         cursor: pointer;
         .card-img {
           width: 100%;
