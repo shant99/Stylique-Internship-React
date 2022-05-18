@@ -78,7 +78,7 @@ function AllProducts() {
                     : products.filter((itm) => {
                         let tags = itm.tags.split(", ").sort().join('');
                         let cardTagname = productsFilter.tagname.sort().join('');
-                        if(tags === cardTagname) return itm
+                        if(tags === cardTagname || tags.includes(cardTagname)) return itm
                       }),
                 ]
                   .flat(1)
