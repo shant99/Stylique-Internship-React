@@ -76,14 +76,9 @@ function AllProducts() {
                   productsFilter.filterProducts
                     ? products
                     : products.filter((itm) => {
-                        let tags = itm.tags.split(", ").sort();
-                        let cardTagname = productsFilter.tagname;
-                        let arr = cardTagname
-                          .map((a) => {
-                            if (tags.some((b) => a === b)) return a;
-                          })
-                          .filter((i) => i !== undefined);
-                        if (arr.length) return itm;
+                        let tags = itm.tags.split(", ").sort().join('');
+                        let cardTagname = productsFilter.tagname.sort().join('');
+                        if(tags === cardTagname) return itm
                       }),
                 ]
                   .flat(1)
