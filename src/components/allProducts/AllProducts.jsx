@@ -35,7 +35,6 @@ function AllProducts() {
       const newTagnameArr = !is_tagsnameActive
         ? tagnameArr.filter((i) => i !== item.tagname).sort()
         : [...tagnameArr, item.tagname];
-      console.log(newTagnameArr);
       return {
         tagname: newTagnameArr,
         filterProducts: newTagnameArr.length ? false : true,
@@ -73,12 +72,25 @@ function AllProducts() {
             <div className="allproducts-cards-column">
               {products.length ? (
                 [
+                  // let one = [ 'c'  , 'a'];
+                  // let two = [{tags: ['a' , 'b']} , {tags:['b']} , {tags: ['c']} , {tags:[ 'a']}]
+                
+                
+                  // let arr = two.filter((item) => {
+                  //   let a = one.map(i => {
+                  //     let s = item.tags.some(e => i === e)
+                  //     if(s) return s
+                  //   })
+                  //   if(a.every(e => e === true)) return item
+                  // })
                   productsFilter.filterProducts
                     ? products
-                    : products.filter((itm) => {
-                        let tags = itm.tags.split(", ").sort().join('');
-                        let cardTagname = productsFilter.tagname.sort().join('');
-                        if(tags === cardTagname || tags.includes(cardTagname)) return itm
+                    : products.filter((item) => {
+                        let arr = productsFilter.tagname.map(i => {
+                           let s = item.tags.split(', ').some(e => i === e)
+                           if(s) return s
+                        })
+                        if(arr.every(e => e === true)) return item
                       }),
                 ]
                   .flat(1)

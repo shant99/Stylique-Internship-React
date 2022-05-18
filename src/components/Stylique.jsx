@@ -10,20 +10,19 @@ import { CARDS_API, TAGNAMES_API } from "../config/actions";
 function Stylique() {
   const dispatch = useDispatch();
 
-  let tagname = ['b' , 'a' ];
-  let prodTags = [{tags: ['a' , 'b']} , {tags:['b']} , {tags: ['c']} , {tags:[ 'a']}]
+  let one = [ 'c'  , 'a'];
+  let two = [{tags: ['a' , 'b']} , {tags:['b']} , {tags: ['c']} , {tags:[ 'a']}]
 
-  let strP = prodTags[0].tags.sort().join('')
-  let strT = tagname.sort().join('')
-  console.log(strP === strT)
-  
-  // let arr = prodTags.filter((itm , ind , array) => {
-  //   let arr =  array[ind].tags.every(e=> tagname.includes(e))
-  //   if(arr) return itm
-  // })
 
-  // console.log(arr)
-  
+  let arr = two.filter((item) => {
+    let a = one.map(i => {
+      let s = item.tags.some(e => i === e)
+      if(s) return s
+    })
+    if(a.every(e => e === true)) return item
+  })
+
+
   useEffect(() => {
     fetch(CARDS_API)
       .then((data) => data.json())
