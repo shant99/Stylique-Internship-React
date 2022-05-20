@@ -1,16 +1,17 @@
-import "./allProducts.scss";
+/* eslint-disable array-callback-return */
+import "./allProductsPage.scss";
 import Button from "../../UI/Button";
 import FolderPlus from "../../Icons/FolderPlus";
 import StyliqueLogo from "../../Icons/StyliqueLogo";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-import { setCardDetails } from "../../redux/slice/reducerOne";
+import { setCardDetails } from "../../redux/slice/allProductsPage_Slice";
 import { useState } from "react";
 import { CARD_DETAILS } from "../../config/actions";
 import CircularProgress from "@mui/material/CircularProgress";
 
-function AllProducts() {
-  let { products, tagname } = useSelector((state) => state.reducerOne);
+function AllProductsPage() {
+  let { products, tagname } = useSelector((state) => state.allProductsPage_Slice);
   let [productsFilter, setProductsFilter] = useState({
     tagname: [],
     filterProducts: true,
@@ -72,25 +73,14 @@ function AllProducts() {
             <div className="allproducts-cards-column">
               {products.length ? (
                 [
-                  // let one = [ 'c'  , 'a'];
-                  // let two = [{tags: ['a' , 'b']} , {tags:['b']} , {tags: ['c']} , {tags:[ 'a']}]
-                
-                
-                  // let arr = two.filter((item) => {
-                  //   let a = one.map(i => {
-                  //     let s = item.tags.some(e => i === e)
-                  //     if(s) return s
-                  //   })
-                  //   if(a.every(e => e === true)) return item
-                  // })
                   productsFilter.filterProducts
                     ? products
                     : products.filter((item) => {
-                        let arr = productsFilter.tagname.map(i => {
-                           let s = item.tags.split(', ').some(e => i === e)
-                           if(s) return s
-                        })
-                        if(arr.every(e => e === true)) return item
+                        let arr = productsFilter.tagname.map((i) => {
+                          let s = item.tags.split(", ").some((e) => i === e);
+                          if (s) return s; 
+                        });
+                        if (arr.every((e) => e === true)) return item;
                       }),
                 ]
                   .flat(1)
@@ -142,4 +132,4 @@ function AllProducts() {
   );
 }
 
-export default AllProducts;
+export default AllProductsPage;

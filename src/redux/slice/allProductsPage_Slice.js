@@ -8,8 +8,8 @@ const initialState = {
     cardDetails: {}
 }
 
-const reducerOne = createSlice({
-    name: 'reducerOne' ,
+const allProductsPage_Slice = createSlice({
+    name: 'allProductsPage_Slice' ,
     initialState,
     reducers: {
         setProducts: (state, action)=> {
@@ -24,5 +24,5 @@ const reducerOne = createSlice({
     }
 })
 
-export let {setProducts , setTagname , setCardDetails} = reducerOne.actions;
-export default reducerOne.reducer;
+export let {setProducts , setTagname , setCardDetails} = allProductsPage_Slice.actions;
+export default allProductsPage_Slice.reducer;

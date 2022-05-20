@@ -1,0 +1,17 @@
+@import '../../../../scss/variables.scss';
+.above-header-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 6px;
+    background-color: $stylique-grey-1;
+    .above-header{
+        font-size: 12px;
+        font-weight: 500;
+        color:  $stylique-grey-2;
+        & span{
+            font-weight: 700;
+        }
+    }
+}

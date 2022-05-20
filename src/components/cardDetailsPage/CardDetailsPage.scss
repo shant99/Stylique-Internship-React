@@ -1,0 +1,30 @@
+@import "../../scss/mixins.scss";
+@import "../../scss/variables.scss";
+
+.card-details-page {
+  width: 100%;
+  min-height: 100vh;
+  .card-details-page-body-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 0 100px;
+      .card-details-page-body {
+        width: 81%;
+      .pag {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: 10px) and (max-width: 300px) {
+}
+@media (min-width: 300px) and (max-width: 768px) {
+}
+@media (min-width: 768px) and (max-width: 991px) {
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+}

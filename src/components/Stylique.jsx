@@ -1,26 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import "./stylique.scss";
-import AllProducts from "./allProducts/AllProducts";
+import AllProducts from "./allProductsPage/AllProductsPage";
 import { useDispatch } from "react-redux";
-import { setProducts, setTagname } from "../redux/slice/reducerOne";
-import { CARDS_API, TAGNAMES_API } from "../config/actions";
+import { setProducts, setTagname } from "../redux/slice/allProductsPage_Slice";
+import { CARDS_API, CARD_DETAILS_API, TAGNAMES_API } from "../config/actions";
+import { setCardDetails } from "../redux/slice/cardDetailsPage_Slice";
 
 
 function Stylique() {
   const dispatch = useDispatch();
-
-  let one = [ 'c'  , 'a'];
-  let two = [{tags: ['a' , 'b']} , {tags:['b']} , {tags: ['c']} , {tags:[ 'a']}]
-
-
-  let arr = two.filter((item) => {
-    let a = one.map(i => {
-      let s = item.tags.some(e => i === e)
-      if(s) return s
-    })
-    if(a.every(e => e === true)) return item
-  })
 
 
   useEffect(() => {
@@ -30,6 +19,9 @@ function Stylique() {
     fetch(TAGNAMES_API)
       .then((data) => data.json())
       .then((res) => dispatch(setTagname({ tagname: res })));
+    // fetch(CARD_DETAILS_API)
+    //   .then((data) => data.json())
+    //   .then((res)=> dispatch(setCardDetails({ cardDetails: res })))
  
   }, []);
   return (

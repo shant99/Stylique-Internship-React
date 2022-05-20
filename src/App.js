@@ -1,7 +1,8 @@
 import { Provider } from "react-redux";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.scss";
-import Card from "./components/allProducts/card/Card";
+
+import Card from "./components/cardDetailsPage/CardDetailsPage";
 import Stylique from "./components/Stylique";
 import store from "./redux/store";
 

@@ -1,0 +1,28 @@
+@import '../../../../scss/variables.scss';
+.header-container {
+  width: 100%;
+  padding: 22px 140px 16px 140px;
+  .header {
+    width: 100%;
+    .row-1 {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 0 20px 0;
+    }
+    .row-2 {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .tabs{
+          .tab{
+              font-weight: 400;
+              padding: 0 24px 0 0;
+              color: $stylique-grey-3;
+          }
+      }
+    }
+  }
+}

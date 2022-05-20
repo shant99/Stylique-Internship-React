@@ -1,0 +1,9 @@
+@import '../../scss/variables.scss';
+.searchInput{
+    position: relative;
+    border: none;
+    border-bottom: 1px solid $stylique-grey-3;
+}
+.searchInput::placeholder{
+    color: $stylique-grey-4;
+}
