@@ -1,0 +1,26 @@
+.footer-container{
+    width: 100%;
+    background-color: #FAFAFA;
+    .footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-items: center;
+        padding: 80px 0 80px 0 ;
+        &  ul >  li {
+            margin-bottom: 4px;
+            white-space: normal;
+            display: flex;
+            align-items: center;
+        }
+        &  ul >  li a{
+            margin-bottom: 4px;
+            color:#191919;
+            text-decoration: none;
+        }
+        &  ul >  li span{
+            margin-right: 30px;
+            white-space: normal;
+        }
+
+    }
+}

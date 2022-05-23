@@ -1,9 +1,10 @@
 import "./CardDetailsPage.scss";
 import AboveHeader from "./components/aboveHeader/AboveHeader";
 import CardDetals from "./components/cardDetails/CardDetails";
+import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
-import OtherDetails from "./components/otherDetails/OtherDetails";
-import Visa from "./components/visa/Visa";
+import TabsContainer from "./components/tabsContainer/TabsContainer";
+import Visas from "./components/visa/Visas";
 
 function Card() {
   return (
@@ -14,11 +15,13 @@ function Card() {
         <div className="card-details-page-body">
           <div className="pag">Home / Produkte / Fliesen / Zementfliesen</div>
           <CardDetals />
-          <OtherDetails />
-          <Visa />
+          <TabsContainer />
+          <Visas />
         </div>
       </div>
-      <div className="footer"></div>
+      <div className="footer">
+        <Footer />
+      </div>
     </div>
   );
 }

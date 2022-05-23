@@ -1,104 +1,115 @@
-@import '../../../../scss/variables.scss';
-.card-details-container{
-    max-height: 757px;
-    .product-image-carousel{
-        width: 72%;
+@import "../../../../scss/variables.scss";
+.product-details-container {
+  width: 100%;
+  padding: 24px 0 101px 0;
+  display: flex;
+  .product-images-wrapper {
+    width: 62%;
+    .product-image-zoom {
+      width: 100%;
+      display: flex;
+      height: 500px;
+      justify-content: flex-end;
+      align-items: flex-start;
+      .product-image-zoom-img {
+        width: calc((100%/3) * 2);
         height: 100%;
-        padding: 0;
+      }
     }
-}
-.x{
-    border: none;
-    background-color: #191919;
-    border-radius:100%;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.product-image-zoom{
-    padding-left: 256px;
-    .product-image-zoom-img{
-        width: 500px;
-        height: 500px;
-    }
-}
-.product-image-carousel{
-}
-.product-image-div{
-    cursor: pointer;
-    width: 100%;
-    .product-image{
-        // padding: 0 6px;
-        width: 244px;
+    .main-carousel {
+      width: 100%;
+      height: 244px;
+      .product-image {
+        padding: 12px 6px 0 6px;
+        width: 100%;
         height: 244px;
         object-fit: cover;
+        cursor: pointer;
+      }
+      & .slick-arrow {
+        border: none;
+        background-color: #191919;
+        border-radius: 100%;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      & .slick-next {
+        right: 8px;
+        z-index: 1000;
+        &:hover,
+        &:active,
+        &:focus {
+          background-color: #191919;
+        }
+        &::before {
+          content: ">";
+          line-height: 0;
+          opacity: 1;
+          font-weight: 800;
+        }
+      }
+      & .slick-prev {
+        left: 8px;
+        z-index: 1000;
+        &:hover,
+        &:active,
+        &:focus {
+          background-color: #191919;
+        }
+        &::before {
+          content: "<";
+          line-height: 0;
+          opacity: 1;
+          font-weight: 800;
+        }
+      }
     }
-    .product-image{
-        // padding-left: 12px;
-    }
-}
-// .slick-slider{
-//     margin: 0;
-//     padding: 0;
-// }
-.product-image-carousel{
-    position: relative;
+  }
+  .delivery-info{
+    padding: 0 45px;
+  }
 }
 
-.slick-next{
-    border: none;
-    background-color: #191919;
-    border-radius:100%;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('../../../../Icons/Next.jsx');
-    right: 4px;
-    z-index: 1000;
-    
-}
-.slick-prev{
-    border: none;
-    background-color: #191919;
-    border-radius:100%;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    left: 4px;
-    z-index: 1000;   
-}
-.slick-prev:hover,
-.slick-prev:active,
-.slick-prev:focus
-{
-    background-color: #191919;
-}
-.slick-prev::before{
-    content: '' !important;
-    background-image: none;
-    background: none !important;
-    display: none;
-    color: none;
-
-
-
+.price-box-container{
+  padding: 12px;
 }
 
-
-
-
-.slick-next:hover,
-.slick-next:active,
-.slick-next:focus
-{
-    background-color: #191919;
+@media (min-width: 10px) and (max-width: 300px) {
 }
-.slick-next:before{
-    font-size: 0;
+@media (min-width: 300px) and (max-width: 768px) {
+  .product-image-zoom{
+    max-height: 150px;
+  }
+  .product-image {
+    max-height: 70px;
+  }
+  .slick-arrow{
+    max-width: 22px;
+    max-height: 22px;
+  }
+  .slick-arrow::before{
+    font-size: 14px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .product-image-zoom{
+    max-height: 250px;
+  }
+  .product-image {
+    max-height: 120px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .product-image-zoom{
+    max-height: 350px;
+  }
+  .main-carousel{
+    height: 180px;
+  }
+  .product-image {
+    max-height: 200px;
+  }
 }

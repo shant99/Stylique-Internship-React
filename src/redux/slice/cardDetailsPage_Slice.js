@@ -4,6 +4,11 @@ import { CARD_DETAILS_API } from "../../config/actions";
 const initialState = {
   cardDetails: {},
   productImages: [],
+  price: 0 ,
+  sampleboxprice: 0 , 
+  selling_unit: 'Package',
+  productName: '' , 
+  atributes: []
 };
 
 export let asyncFunction = createAsyncThunk(
@@ -32,6 +37,11 @@ const cardDetailsPage_Slice = createSlice({
       state.cardDetails = action.payload;
       // fulfilled depqum state-@ karucum enq 
       state.productImages = action.payload.ProductImages;
+      state.price = action.payload.price;
+      state.sampleboxprice = action.payload.sampleboxprice;
+      state.manufacturerName = action.payload.manufacturerName;
+      state.productName = action.payload.productName;
+      state.atributes = action.payload.atributes
     },
     [asyncFunction.rejected]: (state, action) => {},
   },
