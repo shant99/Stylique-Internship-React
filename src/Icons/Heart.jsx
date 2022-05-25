@@ -1,6 +1,7 @@
-function Love({ width = 24, height = 22, cursor = "" }) {
+function Love({ width = 24, height = 22, cursor = "" , className = '' }) {
   return (
     <svg
+    className={className}
       width={width}
       height={height}
       cursor={cursor}

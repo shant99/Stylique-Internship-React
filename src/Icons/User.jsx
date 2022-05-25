@@ -1,6 +1,7 @@
-function User({width='20px' , height ='22px' , cursor = ''}) {
+function User({width='20px' , height ='22px' , cursor = '' , className = ''}) {
   return (
     <svg
+    className={className}
       width={width}
       height={height}
       cursor={cursor}

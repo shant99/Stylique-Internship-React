@@ -19,9 +19,7 @@ function Card() {
           <Visas />
         </div>
       </div>
-      <div className="footer">
         <Footer />
-      </div>
     </div>
   );
 }
