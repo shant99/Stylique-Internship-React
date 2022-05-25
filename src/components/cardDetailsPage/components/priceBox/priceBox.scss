@@ -1,3 +1,6 @@
+.price-box{
+    padding: 0 8px 0 0 ;
+}
 .price-box-row-1{
     display: flex;
     justify-content: space-between;
@@ -7,23 +10,28 @@
         color: #191919;
         font-size: 14px;
         font-weight: 700;
+        font-family: 'EudoxusSansMedium'
     }
     & .price-2{
         font-size: 28px;
         color: #191919;
         font-weight: 700;
+        font-family: 'EudoxusSansMedium'
     }
 }
 .price-box-row-2{
     display: flex;
     align-items: center;
-    padding-bottom: 12px;
+    padding-bottom: 12px; 
+    width: 100%;
     .warenkorb{
+        width: 100%;
         border: none;
         background-color: #191919;
-        padding: 10px 89px;
+        padding: 10px 90px;
         color: white;
         margin-right: 7px;
+        font-family: 'EudoxusSansRegular'
     }
     & .like{
         padding: 5px 10px;
@@ -33,12 +41,16 @@
 }
 .price-box-row-3{
     padding-bottom: 12px;
+    width: 100%;
     .bestellen{
+        width: 100%;
         color: #191919;
         background-color: white;
         width: 100%;
         border: 1px solid #191919;
         padding: 10px 125px; 
+        white-space: nowrap;
+        font-family: 'EudoxusSansRegular'
     }
 }
 .price-box-row-4{
@@ -51,10 +63,12 @@
         border-bottom: 1px solid #191919;
         font-weight: 400;
         padding: 4px;
+        font-family: 'EudoxusSansMedium'
     }
     .sampleboxprice{
         color: #191919;
         font-weight: 700;
         font-size: 14px;
+        font-family: 'EudoxusSansMedium'
     }
 }

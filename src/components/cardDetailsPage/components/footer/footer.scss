@@ -7,6 +7,9 @@
         justify-items: center;
         padding: 80px 0 80px 0 ;
         &  ul >  li {
+            & h4{
+                font-family: "EudoxusSansMedium";
+            }
             margin-bottom: 4px;
             white-space: normal;
             display: flex;
@@ -16,6 +19,7 @@
             margin-bottom: 4px;
             color:#191919;
             text-decoration: none;
+            font-family: "EudoxusSansLight";
         }
         &  ul >  li span{
             margin-right: 30px;

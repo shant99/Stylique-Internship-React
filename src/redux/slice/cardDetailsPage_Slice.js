@@ -8,7 +8,7 @@ const initialState = {
   sampleboxprice: 0 , 
   selling_unit: 'Package',
   productName: '' , 
-  atributes: []
+  attributes: []
 };
 
 export let asyncFunction = createAsyncThunk(
@@ -41,7 +41,7 @@ const cardDetailsPage_Slice = createSlice({
       state.sampleboxprice = action.payload.sampleboxprice;
       state.manufacturerName = action.payload.manufacturerName;
       state.productName = action.payload.productName;
-      state.atributes = action.payload.atributes
+      state.attributes = action.payload.attributes
     },
     [asyncFunction.rejected]: (state, action) => {},
   },

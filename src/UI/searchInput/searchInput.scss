@@ -1,9 +1,28 @@
 @import '../../scss/variables.scss';
-.searchInput{
+
+.search-input-ui{
     position: relative;
-    border: none;
-    border-bottom: 1px solid $stylique-grey-3;
-}
-.searchInput::placeholder{
-    color: $stylique-grey-4;
+    & .search-input-icon{
+        position: absolute; 
+        top: 5px; 
+        left: 3px;
+    }
+    .searchInput{
+        
+        border: none;
+        border-bottom: 1px solid $stylique-grey-3;
+        width: 480px;
+        padding: 6px 44px ;
+    }
+    .searchInput:hover,
+    .searchInput:focus,
+    .searchInput:active
+    {      
+        border: none;
+        outline: none;
+        border-bottom: 1px solid $stylique-grey-3;
+    }
+    .searchInput::placeholder{
+        color: $stylique-grey-4;
+    }
 }

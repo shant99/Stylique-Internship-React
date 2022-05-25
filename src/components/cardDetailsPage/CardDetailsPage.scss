@@ -4,6 +4,7 @@
 .card-details-page {
   width: 100%;
   min-height: 100vh;
+  
   .card-details-page-body-container {
       width: 100%;
       display: flex;
@@ -15,6 +16,11 @@
         width: 81%;
       .pag {
         width: 100%;
+        font-family: 'EudoxusSansLight';
+        cursor: pointer;
+        & .pag1{
+          font-family: 'EudoxusSansRegular';
+        }
       }
     }
   }

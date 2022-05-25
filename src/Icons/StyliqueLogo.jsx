@@ -32,7 +32,7 @@ const E = () => (<svg width="15" height="21" viewBox="0 0 15 21" fill="none" xml
 
 function StyliqueLogo({className}){
     return(
-        <span className={className} >
+        <span className={className} style={{display: 'flex' , gap: '2px' , flexWrap: 'nowrap' , cursor: 'pointer'}}>
             <S/><T/><Y/><L/><I/><Q/><U/><E/>
         </span>
     )

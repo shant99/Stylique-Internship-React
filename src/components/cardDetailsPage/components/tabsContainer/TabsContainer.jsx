@@ -4,6 +4,7 @@ import InfoCircle from "../../../../Icons/InfoCircle";
 import Truck from "../../../../Icons/Truck";
 import "./tabsContainer.scss";
 import { v4 as uuidv4 } from "uuid";
+import { useRef, useState } from "react";
 
 const tabs = [
   "Beschreibung",
@@ -35,11 +36,9 @@ const TabPanel1 = () => {
       <p className="tab-panel-1-tags">
         {tabPanel.tags.map((item, index) => {
           return (
-            <>
-              <span key={index} className="tab-panel-1-tag">
-                {item}
-              </span>
-            </>
+            <span key={index} className="tab-panel-1-tag">
+              {item}
+            </span>
           );
         })}
       </p>
@@ -72,26 +71,46 @@ const TabPanel2 = () => {
   return (
     <>
       <div className="tab-panel-2">
-        <ul className="tab-panel-product-info-col1">
-          {productInfoCol1.map((item) => {
-            return (
-              <li key={uuidv4()}>
-                <span>{item[0]}</span>
-                <span>{item[1]}</span>
-              </li>
-            );
-          })}
-        </ul>
-        <ul className="tab-panel-product-info-col2">
-          {productInfoCol2.map((item) => {
-            return (
-              <li key={uuidv4()}>
-                <span>{item[0]}</span>
-                <span>{item[1]}</span>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="tab-panel-product-info-ul1">
+          <ul>
+            {productInfoCol1.map((item) => {
+              return (
+                <li key={uuidv4()} className="li">
+                  <span className="title">{item[0]}</span>
+                </li>
+              );
+            })}
+          </ul>
+          <ul>
+            {productInfoCol1.map((item) => {
+              return (
+                <li key={uuidv4()} className="li">
+                  <span className="description">{item[1]}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div className="tab-panel-product-info-ul2">
+          <ul>
+            {productInfoCol2.map((item) => {
+              return (
+                <li key={uuidv4()} className="li">
+                  <span className="title">{item[0]}</span>
+                </li>
+              );
+            })}
+          </ul>
+          <ul>
+            {productInfoCol2.map((item) => {
+              return (
+                <li key={uuidv4()} className="li">
+                  <span className="description">{item[1]}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </>
   );
@@ -110,9 +129,17 @@ const TabPanel3 = () => {
       <ul>
         {arr.map((item) => {
           return (
-            <li key={uuidv4()}>
-              <span>{item[0]}</span>
-              <span>{item[1]}</span>
+            <li key={uuidv4()} className="li">
+              <span className="title">{item[0]}</span>
+            </li>
+          );
+        })}
+      </ul>
+      <ul>
+        {arr.map((item) => {
+          return (
+            <li key={uuidv4()} className="li">
+              <span className="description">{item[1]}</span>
             </li>
           );
         })}
@@ -126,7 +153,7 @@ const TabPanel4 = () => {
     <div className="tab-panel-4">
       <div className="tab-panel-4-rows">
         <div className="tab-panel-4-row">
-          <span>
+          <span className="icon">
             <Clock />
           </span>
           <p>
@@ -136,7 +163,7 @@ const TabPanel4 = () => {
           </p>
         </div>
         <div className="tab-panel-4-row">
-          <span>
+          <span className="icon">
             <Truck />
           </span>
           <p>
@@ -146,7 +173,7 @@ const TabPanel4 = () => {
           </p>
         </div>
         <div className="tab-panel-4-row">
-          <span>
+          <span className="icon">
             <InfoCircle />
           </span>
           <p>
@@ -161,29 +188,45 @@ const TabPanel4 = () => {
 };
 
 function TabsContainer() {
-  const tabClickHandler = (e, index) => {
-    //   e.target.classList.toggle('tab-active')
+  let [tabIndex, setTabIndex] = useState(0);
+  let ref = useRef("");
+  const [value, setValue] = useState("1");
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+  const tabPanels = [
+    <TabPanel1 />,
+    <TabPanel2 />,
+    <TabPanel3 />,
+    <TabPanel4 />,
+  ];
+
+  const buttonClickHandler = (e, ind) => {
+    setTabIndex(ind);
   };
   return (
     <>
       <div className="tabs-container">
-        <div className="tabs">
+        <div className="tabs" ref={ref}>
           {tabs.map((item, index) => {
             return (
-              <p key={index} className="tab">
+              <div key={index} className="tab">
                 <button
-                  onClick={(e) => tabClickHandler(e, index)}
-                  className="tab-button"
+                  className={
+                    tabIndex === index
+                      ? "tab-button tab-button-active"
+                      : "tab-button"
+                  }
+                  onClick={e => buttonClickHandler(e , index)}
                 >
                   {item}
                 </button>
-              </p>
+              </div>
             );
           })}
         </div>
-        <div className="tab-panel">
-          <TabPanel4 />
-        </div>
+        <div className="tab-panel">{tabPanels[tabIndex]}</div>
       </div>
     </>
   );

@@ -13,7 +13,7 @@ function Card() {
       <Header />
       <div className="card-details-page-body-container">
         <div className="card-details-page-body">
-          <div className="pag">Home / Produkte / Fliesen / Zementfliesen</div>
+          <div className="pag">Home / Produkte / Fliesen / <span className="pag1">Zementfliesen</span></div>
           <CardDetals />
           <TabsContainer />
           <Visas />

@@ -10,8 +10,12 @@
         font-size: 12px;
         font-weight: 500;
         color:  $stylique-grey-2;
+        font-family: 'EudoxusSansLight';
         & span{
             font-weight: 700;
+        }
+        & .above-header-info{
+            font-family: 'EudoxusSansRegular';
         }
     }
 }

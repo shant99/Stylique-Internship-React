@@ -1,4 +1,4 @@
-@import '../../../../scss/variables.scss';
+@import "../../../../scss/variables.scss";
 .header-container {
   width: 100%;
   padding: 22px 140px 16px 140px;
@@ -11,18 +11,46 @@
       justify-content: space-between;
       align-items: center;
       padding: 0 0 20px 0;
+      & .row-1-icons{
+        display: flex;
+        gap: 18px;
+        align-items: center;
+      }
     }
     .row-2 {
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      .tabs{
-          .tab{
-              font-weight: 400;
-              padding: 0 24px 0 0;
-              color: $stylique-grey-3;
-          }
+      & .tabs {
+        & .tab {
+          font-weight: 400;
+          margin-right: 24px;
+          color: $stylique-grey-3;
+          cursor: pointer;
+          font-family: 'EudoxusSansLight';
+        }
+        & .tab:hover {
+          border-bottom: 1px solid black;
+        }
+      }
+      select{
+        position: relative;
+        border: none;
+        font-family: 'EudoxusSansLight';
+      }
+      option{
+        position: absolute;
+        top: 30px;
+        background-color: white;
+      }
+      select:focus,
+      select:hover,
+      option:hover,
+      option:focus {
+        border: none;
+        outline: none;
+        border: transparent;
       }
     }
   }

@@ -1,8 +1,9 @@
-function Love({width = 24 , height = 22 }) {
+function Love({ width = 24, height = 22, cursor = "" }) {
   return (
     <svg
       width={width}
       height={height}
+      cursor={cursor}
       viewBox="0 0 24 22"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

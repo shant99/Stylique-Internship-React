@@ -1,65 +1,135 @@
-.tabs-container{
-    width: 100%;
-    margin-bottom: 52px;
-    // border: 1px solid grey;
+.tabs-container {
+  width: 100%;
+  height: 281px;
+  margin-bottom: 52px;
+  // border: 1px solid grey;
+  display: flex;
+  .tabs {
+    padding: 20px 24px 20px 24px;
+    width: 25%;
+    border-right: 1px solid #e3e3e3;
     display: flex;
-    .tabs{
-        padding: 20px 24px 20px 24px;
-        width: 25%;
-        border-right: 1px solid #E3E3E3;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .tab-panel {
+    width: 75%;
+    .tab-panel-1 {
+      padding: 16px 54px 16px 54px;
+      color: #191919;
+      .tab-panel-1-title {
+        font-weight: 700;
+        margin-bottom: 24px;
+        font-family: "EudoxusSansMedium";
+      }
+      .tab-panel-1-content {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 20px;
+        font-family: "EudoxusSansLight";
+      }
+      .tab-panel-1-tags {
+        display: flex;
+        gap: 5px;
+        .tab-panel-1-tag {
+          background-color: #f7f7f7;
+          padding: 4px 16px;
+          font-family: "EudoxusSansRegular";
+        }
+      }
+    }
+    .tab-panel-2 {
+      padding: 48px 0 0 54px;
+      color: #191919;
+      display: flex;
+      gap: 96px;
+      .tab-panel-product-info-ul1 {
+        display: flex;
+        gap: 40px;
+        & .li {
+          margin-bottom: 14px;
+        }
+        & .title {
+          font-size: 14px;
+          font-weight: 700;
+          font-family: "EudoxusSansMedium";
+        }
+        & .description {
+          font-size: 14px;
+          font-weight: 400;
+          font-family: "EudoxusSansLight";
+        }
+      }
+      .tab-panel-product-info-ul2 {
+        display: flex;
+        gap: 40px;
+        & .li {
+          margin-bottom: 14px;
+        }
+        & .title {
+          font-size: 14px;
+          font-weight: 700;
+          font-family: "EudoxusSansMedium";
+        }
+        & .description {
+          font-size: 14px;
+          font-weight: 400;
+          font-family: "EudoxusSansLight";
+        }
+      }
+    }
+    .tab-panel-3 {
+      padding: 48px 54px;
+      display: flex;
+      gap: 48px;
+      & .title {
+        font-size: 14px;
+        font-weight: 700;
+        font-family: "EudoxusSansMedium";
+      }
+      & .li {
+        margin-bottom: 14px;
+      }
+      & ul {
         display: flex;
         flex-direction: column;
-        gap: 20px;
-        .tab{
-            .tab-button{
-                padding: 4px 0 4px 4px ;
-                border: none;
-                background: transparent;
-            }
-            .tab-active,
-            .tab-active,
-            .tab-active {
-                border-bottom: 1px solid grey;
-            }
-        }
-
+      }
+      & .desc {
+        font-size: 14px;
+        font-weight: 400;
+        font-family: "EudoxusSansLight";
+      }
     }
-    .tab-panel{
-        width: 75%;
-        .tab-panel-1{
-            padding: 16px 54px 16px 54px;
-            color:#191919;
-            .tab-panel-1-title{
-                font-weight: 700;
-                margin-bottom: 24px;
-            }
-            .tab-panel-1-content{
-                font-size: 14px;
-                line-height: 20px;
-                margin-bottom: 20px;
-            }
-            .tab-panel-1-tags{
-                display: flex;
-                gap: 5px;
-                .tab-panel-1-tag{
-                    background-color: #F7F7F7;
-                    padding: 4px 16px;
-                }
-            }
-        }
-        .tab-panel-2{
-            padding: 48px 0 53px 54px;
-            color:#191919;
-            display: flex;
-            gap: 96px;  
-            .tab-panel-product-info-col1{
-            }
-        }
-        .tab-panel-3{
 
+    .tab-panel-4 {
+      padding: 48px 0 0 54px;
+      & .tab-panel-4-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 16px;
+        font-family: "EudoxusSansLight";
+        & .icon {
+          background-color: #f5f7fa;
+          padding: 4px;
         }
-        .tab-panel-4{
-            
-        }
+      }
     }
+  }
 }
+
+.tab-button {
+  cursor: pointer;
+  border: none;
+  padding-bottom: 5px;
+  background-color: white;
+  font-family: "EudoxusSansLight";
+  border-bottom: 1px solid white;
+}
+.tab-button-active {
+  border-bottom: 1px solid black;
+  font-family: "EudoxusSansMedium";
+
+}
+
+

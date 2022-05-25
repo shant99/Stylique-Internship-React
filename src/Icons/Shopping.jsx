@@ -1,8 +1,9 @@
-function Shopping() {
+function Shopping({ width = "20", height = "22", cursor = "" }) {
   return (
     <svg
-      width="20"
-      height="22"
+      width={width}
+      height={height}
+      cursor={cursor}
       viewBox="0 0 20 22"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
