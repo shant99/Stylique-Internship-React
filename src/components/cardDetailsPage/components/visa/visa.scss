@@ -2,6 +2,7 @@
   padding: 16px;
   width: 100%;
   background-color: #f7f7f7;
+
   .visa-row-1 {
     display: flex;
     justify-content: space-between;
@@ -16,6 +17,7 @@
       font-family: "EudoxusSansMedium";
       & span {
         padding-left: 16px;
+        font-size: 14px;
       }
     }
   }
@@ -27,24 +29,43 @@
   }
 }
 
-
 @media (max-width: 1300px) {
-    .visa-row-1 {
-        display: grid !important;
-        grid-template-columns: repeat(2 , 1fr);
-        gap: 20px !important;
-    }
-}
-@media (max-width: 800px) {
-    .visas{
-        display: flex !important;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 16px !important;
-    }
   .visa-row-1 {
     display: grid !important;
-    grid-template-columns: repeat(1 , 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px !important;
+  }
+}
+@media (max-width: 800px) {
+  .visas {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px !important;
+  }
+  .visa-row-1 {
+    display: grid !important;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .visas {
+    padding: 16px 2px !important;
+  }
+  .visa-row-1 {
+    display: grid !important;
+    grid-template-columns: repeat(1, 1fr);
+    & .visa-row-1-txt {
+      & span {
+        padding-left: 16px;
+        font-size: 13px !important;
+        white-space: normal;
+      }
+    }
+  }
+  .visa-row-2{
+    display: grid !important;
+    grid-template-columns: repeat(2 , 1fr);
   }
 }

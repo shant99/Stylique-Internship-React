@@ -35,6 +35,18 @@ function CardDetals() {
               arr={productImages}
               className="product-image"
               imgClickHandler={imgClickHandler}
+              slidesToShow = {3}
+              slidesToScroll = {3}
+              dots={false}
+            />
+          </div>
+          <div className="main-carousel-response">
+            <Carousel
+              arr={productImages}
+              className="product-image-response"
+              imgClickHandler={imgClickHandler}
+              slidesToShow={1}
+              slidesToScroll ={1}
             />
           </div>
         </div>
@@ -43,7 +55,7 @@ function CardDetals() {
             <ManufacterInfo />
           </div>
           <div className="price-box-container">
-              <PriceBox />
+            <PriceBox />
           </div>
         </div>
       </div>

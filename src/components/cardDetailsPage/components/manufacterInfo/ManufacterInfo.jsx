@@ -14,7 +14,7 @@ function ManufacterInfo() {
   const attributes1ButtonHandler = (e, value, index) => {
     setValueName(value);
     setButtonIndex(index);
-    console.log()
+    console.log();
   };
 
   return (
@@ -30,7 +30,13 @@ function ManufacterInfo() {
       <div className="manufacter-info-atributes1">
         <p className="manufacter-info-atribute-name">
           {attributes.length ? attributes[0].attributeName : ""}
-          <span className="value-name"> - {attributes.length ? attributes[0].attributeValues[buttonIndex].valueName: ''}</span>
+          <span className="value-name">
+            {" "}
+            -{" "}
+            {attributes.length
+              ? attributes[0].attributeValues[buttonIndex].valueName
+              : ""}
+          </span>
         </p>
         <div className="manufacter-info-atributes1-attributes-wrapper">
           {attributes.length

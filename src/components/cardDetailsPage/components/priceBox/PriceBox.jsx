@@ -8,7 +8,7 @@ function PriceBox() {
     <div className="price-box">
       <p className="price-box-row-1">
         <span className="price-1">{price} € */ Matte</span>
-        <span className="price-2">{price}*</span>
+        <span className="price-2">{price}€*</span>
       </p>
       <p className="price-box-row-2">
         <button className="warenkorb">In den Warenkorb</button>

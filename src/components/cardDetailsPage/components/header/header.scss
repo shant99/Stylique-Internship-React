@@ -18,6 +18,7 @@
         display: flex;
         gap: 18px;
         align-items: center;
+        justify-content: center;
         & .row-1-icons-search-icon{
           display: none;
         }
@@ -78,6 +79,9 @@
   }
   .row-1{
     padding-bottom: 0 !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    padding: 0 24px;
     & .row-1-stylique-logo{
       width: 108px !important;
       height: 16px !important;
@@ -110,7 +114,7 @@
   .row-2{
     display: none !important;
   }
-  .row-2-active{
+  .row-2-block-active{
     padding: 20px 10px;
     overflow-y: scroll !important;
     position: fixed;
@@ -119,11 +123,12 @@
     align-items: center !important;
     justify-content: center !important ;
     width: 100% !important;
-    height: 100vh !important;
+    height: 100% !important;
     top: 0;
     left: 0;
     right: 0;
-    transform: translateX(30);
+    bottom: 0;
+    // transform: translateX(30);
     background-color: white !important;
     z-index: 10000 !important;
     & .tabs{

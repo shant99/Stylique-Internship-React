@@ -18,7 +18,8 @@
         font-size: 14px;
         font-weight: 700;
         padding: 0 0 3px 8px;
-        font-family: 'EudoxusSansMedium'
+        font-family: 'EudoxusSansMedium';
+        white-space: nowrap;
       }
       & .span-2{
         font-size: 12px;
@@ -121,5 +122,12 @@
           font-family: 'EudoxusSansLight'
         }
     }
+  }
+}
+
+@media (max-width: 500px){
+  .manufacter-info-productName {
+    font-size: 20px !important;
+
   }
 }

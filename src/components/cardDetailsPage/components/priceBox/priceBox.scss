@@ -1,5 +1,6 @@
 .price-box{
     padding: 0 8px 0 0 ;
+    width: 100%;
 }
 .price-box-row-1{
     display: flex;
@@ -28,7 +29,10 @@
         width: 100%;
         border: none;
         background-color: #191919;
-        padding: 10px 90px;
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         color: white;
         margin-right: 7px;
         font-family: 'EudoxusSansRegular'
@@ -48,7 +52,7 @@
         background-color: white;
         width: 100%;
         border: 1px solid #191919;
-        padding: 10px 125px; 
+        padding: 10px 0; 
         white-space: nowrap;
         font-family: 'EudoxusSansRegular'
     }
@@ -70,5 +74,21 @@
         font-weight: 700;
         font-size: 14px;
         font-family: 'EudoxusSansMedium'
+    }
+}
+
+@media (max-width: 500px){
+    .price-box-row-1{
+        & .price-1{
+           font-size: 12px !important;
+        }
+        & .price-2{
+            font-size: 16px !important;
+        }
+    }
+    .price-box-row-4{
+        .price-box-row-4-button{
+            font-size: 12px;
+        }
     }
 }

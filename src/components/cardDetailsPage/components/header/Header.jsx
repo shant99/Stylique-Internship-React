@@ -121,7 +121,7 @@ function Header() {
               />
             </div>
           </div>
-          <div className={menuOpen ? "row-2 row-2-active" : "row-2"}>
+          <div className={menuOpen ? "row-2 row-2-block-active" : "row-2"}>
             <MenuClose
               onClick={menuCloseClickHandler}
               className="row-2-active-menu-close"
