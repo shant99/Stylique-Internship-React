@@ -29,18 +29,22 @@
         width: 100%;
         border: none;
         background-color: #191919;
-        padding: 10px 0;
+        padding: 12px 0;
         display: flex;
         justify-content: center;
         align-items: center;
         color: white;
         margin-right: 7px;
-        font-family: 'EudoxusSansRegular'
+        font-family: 'EudoxusSansRegular';
+        font-size: 16px;
     }
     & .like{
-        padding: 5px 10px;
+        padding: 11px 11px;
         border: 1px solid #191919;
         background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 .price-box-row-3{
@@ -54,7 +58,8 @@
         border: 1px solid #191919;
         padding: 10px 0; 
         white-space: nowrap;
-        font-family: 'EudoxusSansRegular'
+        font-family: 'EudoxusSansRegular';
+        font-size: 16px;
     }
 }
 .price-box-row-4{
@@ -65,9 +70,10 @@
         border: none;
         background-color: white;
         border-bottom: 1px solid #191919;
-        font-weight: 400;
+        font-weight: 600;
         padding: 4px;
-        font-family: 'EudoxusSansMedium'
+        font-family: 'EudoxusSansLight';
+        font-size: 12px;
     }
     .sampleboxprice{
         color: #191919;
@@ -77,13 +83,35 @@
     }
 }
 
+@media (max-width: 1200px){
+    .price-box{
+        padding: 0 8px 0 0 ;
+        width: 100%;
+    }
+}
+@media (max-width: 1000px){
+    .price-box{
+        padding: 0 8px 0 0 ;
+        width: 70%;
+    }
+}
+@media (max-width: 800px){
+    .price-box{
+        padding: 0 8px 0 0 ;
+        width: 70%;
+    }
+}
 @media (max-width: 500px){
+    .price-box{
+        padding: 0 8px 0 0 ;
+        width: 100%;
+    }
     .price-box-row-1{
         & .price-1{
-           font-size: 12px !important;
+           font-size: 12px ;
         }
         & .price-2{
-            font-size: 16px !important;
+            font-size: 16px;
         }
     }
     .price-box-row-4{

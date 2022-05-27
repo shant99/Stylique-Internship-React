@@ -7,47 +7,47 @@ import "./visa.scss";
 function Visas() {
   return (
     <>
-      <div className="visas">
-        <div className="visa-row-1">
-          <p className="visa-row-1-txt">
+      <div className="payment-box">
+        <ul className="payment-box-row-1">
+          <li className="payment-box-row-1-txt">
             <span>
               <Diamond />
             </span>
             <span>Zertifizierte Produkte</span>
-          </p>
-          <p className="visa-row-1-txt">
+          </li>
+          <li className="payment-box-row-1-txt">
             <span>
               <Diamond />
             </span>
             <span>Sichere Zahlmöglichkeiten</span>
-          </p>
-          <p className="visa-row-1-txt">
+          </li>
+          <li className="payment-box-row-1-txt">
             <span>
               <Diamond />
             </span>
             <span>Produkte aus verschiedenen Kategorien</span>
-          </p>
-          <p className="visa-row-1-txt">
+          </li>
+          <li className="payment-box-row-1-txt">
             <span>
               <Diamond />
             </span>
             <span>Kuratierte Produkte</span>
-          </p>
-        </div>
-        <div className="visa-row-2">
-          <p className="visa-row-2-txt">
+          </li>
+        </ul>
+        <ul className="payment-box-row-2">
+          <li className="payment-box-row-2-txt">
             <Payment className='payment-icon' />
-          </p>
-          <p className="visa-row-2-txt">
-            <Visa className='visa-icon'/>
-          </p>
-          <p className="visa-row-2-txt">
+          </li>
+          <li className="payment-box-row-2-txt">
+            <Visa className='payment-box-icon'/>
+          </li>
+          <li className="payment-box-row-2-txt">
             <Maestro className='maestro-icon' />
-          </p>
-          <p className="visa-row-2-txt">
+          </li>
+          <li className="payment-box-row-2-txt">
             <MasterCard className='masetr-card-icon' />
-          </p>
-        </div>
+          </li>
+        </ul>
       </div>
     </>
   );

@@ -30,3 +30,7 @@ button{
 ul,li,ol{
     list-style: none;
 }
+body{
+	z-index: 0;
+	scroll-behavior: smooth;
+}

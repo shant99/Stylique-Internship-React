@@ -1,16 +1,16 @@
-.visas {
+.payment-box {
   padding: 16px;
   width: 100%;
   background-color: #f7f7f7;
 
-  .visa-row-1 {
+  .payment-box-row-1 {
     display: flex;
     justify-content: space-between;
     padding: 0 0 44px 0;
     flex-wrap: nowrap;
     white-space: nowrap;
     gap: 10px;
-    .visa-row-1-txt {
+    .payment-box-row-1-txt {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -21,7 +21,7 @@
       }
     }
   }
-  .visa-row-2 {
+  .payment-box-row-2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,42 +30,44 @@
 }
 
 @media (max-width: 1300px) {
-  .visa-row-1 {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px !important;
+  .payment-box {
+    .payment-box-row-1 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
   }
 }
 @media (max-width: 800px) {
-  .visas {
-    display: flex !important;
+  .payment-box {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 16px !important;
-  }
-  .visa-row-1 {
-    display: grid !important;
-    grid-template-columns: repeat(1, 1fr);
+    margin-top: 16px;
+    .payment-box-row-1 {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 }
 @media (max-width: 500px) {
-  .visas {
-    padding: 16px 2px !important;
-  }
-  .visa-row-1 {
-    display: grid !important;
-    grid-template-columns: repeat(1, 1fr);
-    & .visa-row-1-txt {
-      & span {
-        padding-left: 16px;
-        font-size: 13px !important;
-        white-space: normal;
+  .payment-box {
+    padding: 16px 2px;
+    .payment-box-row-1 {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      & .payment-box-row-1-txt {
+        & span {
+          padding-left: 16px;
+          font-size: 13px;
+          white-space: normal;
+        }
       }
     }
-  }
-  .visa-row-2{
-    display: grid !important;
-    grid-template-columns: repeat(2 , 1fr);
+    .payment-box-row-2 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 }

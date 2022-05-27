@@ -9,10 +9,9 @@ function Footer() {
     <>
       <div className="footer-container">
         <div className="footer">
-            {/* 1 */}
+          {/* 1 */}
           <ul>
-            <h4>Was suchst du?</h4>
-            <br />
+            <li>Was suchst du?</li>
             <li>
               <a href="#">Produkte</a>
             </li>
@@ -22,7 +21,6 @@ function Footer() {
             <li>
               <a href="#">Magazin</a>
             </li>
-            <br />
             <li>
               <a href="#">Hersteller</a>
             </li>
@@ -35,8 +33,7 @@ function Footer() {
           </ul>
           {/* 2 */}
           <ul>
-            <h4>Unternehmen</h4>
-            <br />
+            <li>Unternehmen</li>
             <li>
               <a href="#">Unsere Mission</a>
             </li>
@@ -46,7 +43,6 @@ function Footer() {
             <li>
               <a href="#">Events</a>
             </li>
-            <br />
             <li>
               <a href="#">Für Architekten</a>
             </li>
@@ -59,20 +55,31 @@ function Footer() {
           </ul>
           {/* 3 */}
           <ul>
-            <h4>Sicher einkaufen</h4>
-            <br />
-            <br />
+            <li>Sicher einkaufen</li>
             <li>
               <a href="#">Lieferung & Versand</a>
             </li>
             <li>
               <a href="#">Bezahlmethoden</a>
             </li>
-            <br />
             <li>
-              <span><Visa width='67' heigth='21'/></span>
-              <span><Maestro width='66' heigth='38'/></span>
-              <span><MasterCard width='60' heigth='40' /></span>
+              <span>
+                <Visa width="67" heigth="21" className="footer-visa-icon" />
+              </span>
+              <span>
+                <Maestro
+                  width="66"
+                  heigth="38"
+                  className="footer-maestro-icon"
+                />
+              </span>
+              <span>
+                <MasterCard
+                  width="60"
+                  heigth="40"
+                  className="footer-masterCard-icon"
+                />
+              </span>
             </li>
             <br />
             <li>
@@ -87,8 +94,8 @@ function Footer() {
           </ul>
           {/* 4 */}
           <ul>
-            <h4>Kundenservice</h4>
-            <br />
+            <li>Kundenservice</li>
+
             <li>
               <a href="#">Du hast Fragen zu Produkten oder zu </a>
             </li>
@@ -97,12 +104,12 @@ function Footer() {
             </li>
             <br />
             <li>
-              <a href="#">E-Mail: team@stylique.de</a>
+             E-Mail: <a href="mailto:team@stylique.de">team@stylique.de</a>
+            </li>
+            <li>
+            Telefon:<a href="tel: +49 211 936 7 50 50"> +49 211 936 7 50 50</a>
             </li>
             <br />
-            <li>
-              <a href="#">Telefon: +49  211  936 7 50 50</a>
-            </li>
             <li>
               <a href="#">Mo-Sa von 9:00 – 20:00</a>
             </li>

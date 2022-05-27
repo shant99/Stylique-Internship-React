@@ -1,9 +1,10 @@
-function MasterCard({width = 69  , height = 24}) {
+function MasterCard({width = 69  , height = 24 , className}) {
   return (
     <svg
       width={width}
       height={height}
       viewBox="0 0 49 24"
+      className={className}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

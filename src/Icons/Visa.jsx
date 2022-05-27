@@ -1,10 +1,11 @@
-function Visa({width = 41 , heigth= 14}) {
+function Visa({width = 41 , heigth= 14 , className = ''}) {
   return (
     <svg
       width={width}
       height={heigth}
       viewBox="0 0 41 14"
       fill="none"
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

@@ -96,6 +96,38 @@ function ManufacterInfo() {
             : ""}
         </div>
       </div>
+      <div className="manufacter-info-atributes2">
+        <p className="manufacter-info-atribute-name">
+          {attributes.length ? 'Bestellmenge' : ""}
+        </p>
+        <div className="manufacter-info-atributes2-attributes-wrapper">
+          {attributes.length
+            ? attributes[1].attributeValues.map((item, index) => {
+                return (
+                  <button key={index} className="atributes2-button">
+                    {item.valueName}
+                  </button>
+                );
+              })
+            : ""}
+        </div>
+      </div>
+      <div className="manufacter-info-atributes2">
+        <p className="manufacter-info-atribute-name">
+          {attributes.length ? 'Munfeler' : ""}
+        </p>
+        <div className="manufacter-info-atributes2-attributes-wrapper">
+          {attributes.length
+            ? attributes[1].attributeValues.map((item, index) => {
+                return (
+                  <button key={index} className="atributes2-button">
+                    {item.valueName}
+                  </button>
+                );
+              })
+            : ""}
+        </div>
+      </div>
     </div>
   );
 }

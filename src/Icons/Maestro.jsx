@@ -1,10 +1,11 @@
-function Maestro({width = 41 , heigth = 24}) {
+function Maestro({width = 41 , heigth = 24 , className = ''}) {
   return (
     <svg
       width={width}
       height={heigth}
       viewBox="0 0 41 24"
       fill="none"
+      className ={className}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
