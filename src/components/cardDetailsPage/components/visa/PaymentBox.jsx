@@ -3,8 +3,8 @@ import Maestro from "../../../../Icons/Maestro";
 import MasterCard from "../../../../Icons/MasterCard";
 import Payment from "../../../../Icons/Payment";
 import Visa from "../../../../Icons/Visa";
-import "./visa.scss";
-function Visas() {
+import "./paymentBox.scss";
+function PaymentBox() {
   return (
     <>
       <div className="payment-box">
@@ -36,16 +36,16 @@ function Visas() {
         </ul>
         <ul className="payment-box-row-2">
           <li className="payment-box-row-2-txt">
-            <Payment className='payment-icon' />
+            <Payment className="payment-icon" />
           </li>
           <li className="payment-box-row-2-txt">
-            <Visa className='payment-box-icon'/>
+            <Visa className="payment-box-icon" />
           </li>
           <li className="payment-box-row-2-txt">
-            <Maestro className='maestro-icon' />
+            <Maestro className="maestro-icon" />
           </li>
           <li className="payment-box-row-2-txt">
-            <MasterCard className='masetr-card-icon' />
+            <MasterCard className="masetr-card-icon" />
           </li>
         </ul>
       </div>
@@ -53,4 +53,4 @@ function Visas() {
   );
 }
 
-export default Visas;
+export default PaymentBox;

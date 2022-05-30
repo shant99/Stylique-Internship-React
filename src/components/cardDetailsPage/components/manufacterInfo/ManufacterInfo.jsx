@@ -2,19 +2,16 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import "./manufacterInfo.scss";
+import { v4 } from "uuid";
 
 function ManufacterInfo() {
   let { manufacturerName, productName, attributes } = useSelector(
     (state) => state.cardDetailsPage_Slice
   );
-
-  let [valueName, setValueName] = useState([]);
   let [buttonIndex, setButtonIndex] = useState(0);
 
   const attributes1ButtonHandler = (e, value, index) => {
-    setValueName(value);
     setButtonIndex(index);
-    console.log();
   };
 
   return (
@@ -48,10 +45,10 @@ function ManufacterInfo() {
                         ? "atributes1-button-wrapper atributes1-button-wrapper-active"
                         : "atributes1-button-wrapper"
                     }
-                    key={index}
+                    key={v4()}
                   >
                     <button
-                      key={index}
+                      key={v4()}
                       style={{ backgroundColor: `${item.code}` }}
                       className="atributes1-button "
                       onClick={(e) =>
@@ -70,9 +67,9 @@ function ManufacterInfo() {
         </p>
         <div className="manufacter-info-atributes3-attributes-wrapper">
           {attributes.length
-            ? attributes[2].attributeValues.map((item, index) => {
+            ? attributes[2].attributeValues.map((item) => {
                 return (
-                  <button key={index} className="atributes3-button">
+                  <button key={v4()} className="atributes3-button">
                     {item.valueName}
                   </button>
                 );
@@ -86,9 +83,9 @@ function ManufacterInfo() {
         </p>
         <div className="manufacter-info-atributes2-attributes-wrapper">
           {attributes.length
-            ? attributes[1].attributeValues.map((item, index) => {
+            ? attributes[1].attributeValues.map((item) => {
                 return (
-                  <button key={index} className="atributes2-button">
+                  <button key={v4()} className="atributes2-button">
                     {item.valueName}
                   </button>
                 );
@@ -98,13 +95,13 @@ function ManufacterInfo() {
       </div>
       <div className="manufacter-info-atributes2">
         <p className="manufacter-info-atribute-name">
-          {attributes.length ? 'Bestellmenge' : ""}
+          {attributes.length ? "Bestellmenge" : ""}
         </p>
         <div className="manufacter-info-atributes2-attributes-wrapper">
           {attributes.length
-            ? attributes[1].attributeValues.map((item, index) => {
+            ? attributes[1].attributeValues.map((item) => {
                 return (
-                  <button key={index} className="atributes2-button">
+                  <button key={v4()} className="atributes2-button">
                     {item.valueName}
                   </button>
                 );
@@ -114,13 +111,13 @@ function ManufacterInfo() {
       </div>
       <div className="manufacter-info-atributes2">
         <p className="manufacter-info-atribute-name">
-          {attributes.length ? 'Munfeler' : ""}
+          {attributes.length ? "Munfeler" : ""}
         </p>
         <div className="manufacter-info-atributes2-attributes-wrapper">
           {attributes.length
-            ? attributes[1].attributeValues.map((item, index) => {
+            ? attributes[1].attributeValues.map((item) => {
                 return (
-                  <button key={index} className="atributes2-button">
+                  <button key={v4()} className="atributes2-button">
                     {item.valueName}
                   </button>
                 );

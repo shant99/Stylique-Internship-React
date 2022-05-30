@@ -1,26 +1,23 @@
 @import "../../../../scss/variables.scss";
+@import "../../../../scss/mixins.scss";
+
 .header-container {
   width: 100%;
   border-bottom: 2px solid rgba(227, 227, 227, 0.2);
   .header {
     width: 100%;
-    padding: 12px  10px ;
+    padding: 12px 10px;
     .row-1 {
       width: 100%;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding-bottom: 22px ;
-
-      & .row-1-icons{
-        display: flex;
+      @include flex(space-around, center);
+      padding-bottom: 22px;
+      & .row-1-icons {
+        @include flex(center, center);
         gap: 18px;
-        align-items: center;
-        justify-content: center;
-        & .row-1-icons-search-icon{
+        & .row-1-icons-search-icon {
           display: none;
         }
-        & .row-1-icons-menu-open{
+        & .row-1-icons-menu-open {
           cursor: pointer;
           display: none;
         }
@@ -30,13 +27,10 @@
 }
 
 .row-2 {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
   position: relative;
- 
-  & .row-2-active-menu-close{
+  width: 100%;
+  @include flex(space-evenly, center);
+  & .row-2-active-menu-close {
     display: none;
   }
   & .tabs {
@@ -45,18 +39,18 @@
       margin-right: 24px;
       color: $stylique-grey-3;
       cursor: pointer;
-      font-family: 'EudoxusSansLight';
+      font-family: "EudoxusSansLight";
     }
     & .tab:hover {
       border-bottom: 1px solid black;
     }
   }
-  select{
+  select {
     position: relative;
     border: none;
-    font-family: 'EudoxusSansLight';
+    font-family: "EudoxusSansLight";
   }
-  option{
+  option {
     position: absolute;
     top: 30px;
     background-color: white;
@@ -70,21 +64,21 @@
     border: transparent;
   }
 }
-.row-2-block-active{
+.row-2-block-active {
   opacity: 0;
 }
-@media (max-width: 1200px){
-  .header-container{
-    .header{
+@media (max-width: 1200px) {
+  .header-container {
+    .header {
       padding: 20px 0 26px 0;
     }
   }
-  .row-2{
-    display: none ;
+  .row-2 {
+    display: none;
   }
-  .row-2-block-active{
+  .row-2-block-active {
     opacity: 1;
-    width: 100% ;
+    width: 100%;
     height: 100%;
     padding: 20px 10px;
     position: fixed;
@@ -92,86 +86,79 @@
     left: 0;
     bottom: 0;
     right: 0;
-    display: flex ;
+    display: flex;
     flex-direction: column;
-    align-items: center ;
-    justify-content: center  ;
-    transition: .2s all;
-    background-color: white ;
-    z-index: 10000 ;
+    align-items: center;
+
+    justify-content: center;
+    transition: 0.2s all;
+    background-color: white;
+    z-index: 10000;
     display: block;
     position: fixed;
     visibility: visible;
-    overflow-y: hid;
-    & .tabs{
+    overflow-y: hidden;
+    & .tabs {
       width: 100% !important  ;
-      display: flex;
+      @include flex(center, center);
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
       gap: 20px;
-      padding: 5px ;
-      & .tab{
+      padding: 5px;
+      & .tab {
         border: 1px solid white;
       }
     }
-    & .select-wrapper{
-      width: 100% ;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    & .select-wrapper {
+      width: 100%;
+      @include flex(center, center);
       padding-top: 10px;
     }
-
   }
-   .row-2-active-menu-close{
+  .row-2-active-menu-close {
     display: block !important;
     position: absolute !important;
     right: 30px;
     top: 30px;
   }
-  & .row-1-icons-menu-open{
+  & .row-1-icons-menu-open {
     cursor: pointer;
     display: block !important;
   }
 }
-@media (max-width: 830px){
-  .header-container{
-    
-    .header{
+@media (max-width: 830px) {
+  .header-container {
+    .header {
       padding: 20px 0 26px 0;
     }
   }
-  .row-1{
+  .row-1 {
     padding-bottom: 0 !important;
     display: flex !important;
     justify-content: space-between !important;
     padding: 0 24px;
-    & .row-1-stylique-logo{
+    & .row-1-stylique-logo {
       width: 108px !important;
       height: 16px !important;
       display: flex;
       flex-wrap: nowrap;
     }
-    & .row-1-search-input{
+    & .row-1-search-input {
       display: none !important;
     }
-    & .row-1-icons{
-      & .row-1-icons-search-icon{
+    & .row-1-icons {
+      & .row-1-icons-search-icon {
         display: block !important;
       }
-      & .row-1-icons-heart-icon{
+      & .row-1-icons-heart-icon {
         display: none;
       }
-      & .row-1-icons-user-icon{
+      & .row-1-icons-user-icon {
         display: none;
       }
-      & .row-1-icons-shopping-icon{
+      & .row-1-icons-shopping-icon {
         width: 21px !important;
         height: 18px !important;
       }
     }
   }
 }
-
-

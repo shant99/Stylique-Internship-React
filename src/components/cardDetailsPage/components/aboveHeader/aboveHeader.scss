@@ -1,27 +1,24 @@
-@import '../../../../scss/variables.scss';
-.above-header-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 6px 6px;
-    background-color: $stylique-grey-1;
-    .above-header{
-        font-size: 12px;
-        font-weight: 500;
-        color:  $stylique-grey-2;
-        font-family: 'EudoxusSansLight';
-        & span{
-            font-weight: 700;
-        }
-        & .above-header-info{
-            font-family: 'EudoxusSansRegular';
-        }
+@import "../../../../scss/variables.scss";
+@import "../../../../scss/mixins.scss";
+
+.above-header-container {
+  width: 100%;
+  @include flex(center, center);
+  padding: 6px 6px;
+  background-color: $stylique-grey-1;
+  .above-header {
+    @include font-style(12px, 500, $stylique-grey-2, "EudoxusSansLight");
+    & span {
+      font-weight: 700;
     }
+    & .above-header-info {
+      font-family: "EudoxusSansRegular";
+    }
+  }
 }
 
 @media (max-width: 830px) {
-    .above-header-container{
-        display: none;
-    }
+  .above-header-container {
+    display: none;
+  }
 }

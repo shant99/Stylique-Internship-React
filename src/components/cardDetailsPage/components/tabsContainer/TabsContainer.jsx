@@ -189,12 +189,6 @@ const TabPanel4 = () => {
 
 function TabsContainer() {
   let [tabIndex, setTabIndex] = useState(0);
-  let ref = useRef("");
-  const [value, setValue] = useState("1");
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
   const tabPanels = [
     <TabPanel1 />,
     <TabPanel2 />,
@@ -208,17 +202,17 @@ function TabsContainer() {
   return (
     <>
       <div className="tabs-container">
-        <div className="tabs" ref={ref}>
+        <div className="tabs" >
           {tabs.map((item, index) => {
             return (
-              <div key={index} className="tab">
+              <div key={uuidv4()} className="tab">
                 <button
                   className={
                     tabIndex === index
                       ? "tab-button tab-button-active"
                       : "tab-button"
                   }
-                  onClick={e => buttonClickHandler(e , index)}
+                  onClick={(e) => buttonClickHandler(e, index)}
                 >
                   {item}
                 </button>

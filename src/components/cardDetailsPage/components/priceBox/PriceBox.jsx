@@ -3,7 +3,9 @@ import Love from "../../../../Icons/Heart";
 import "./priceBox.scss";
 
 function PriceBox() {
-  let { price , sampleboxprice } = useSelector((state) => state.cardDetailsPage_Slice);
+  let { price, sampleboxprice } = useSelector(
+    (state) => state.cardDetailsPage_Slice
+  );
   return (
     <div className="price-box">
       <p className="price-box-row-1">
@@ -20,8 +22,10 @@ function PriceBox() {
         <button className="bestellen">Musten bestellen</button>
       </p>
       <p className="price-box-row-4">
-          <button className="price-box-row-4-button">Mehr Infos zum Muster</button>
-          <span className="sampleboxprice">{sampleboxprice} €*</span>
+        <button className="price-box-row-4-button">
+          Mehr Infos zum Muster
+        </button>
+        <span className="sampleboxprice">{sampleboxprice} €*</span>
       </p>
     </div>
   );

@@ -49,20 +49,19 @@ const HeaderMenuItems = ({ value, selectHandler }) => {
         </a>
       </div>
       <div className="select-wrapper">
-
-      <select
-        name="dropdown-select"
-        className="dropdown-select"
-        onChange={(e) => selectHandler(e)}
-        value={value}
-      >
-        <option className="dropdown-option" value="Hersteller" defaultValue>
-          Hersteller
-        </option>
-        <option className="dropdown-option" value="Vendors">
-          Vendors
-        </option>
-      </select>
+        <select
+          name="dropdown-select"
+          className="dropdown-select"
+          onChange={(e) => selectHandler(e)}
+          value={value}
+        >
+          <option className="dropdown-option" value="Hersteller" defaultValue>
+            Hersteller
+          </option>
+          <option className="dropdown-option" value="Vendors">
+            Vendors
+          </option>
+        </select>
       </div>
     </>
   );
@@ -76,13 +75,13 @@ function Header() {
     setValue(e.target.value);
   };
 
-  const menuOpenClickHandler = (e) => {
+  const menuOpenClickHandler = () => {
     setMenuOpen((prev) => !prev);
   };
   const menuCloseClickHandler = () => {
     setMenuOpen((prev) => !prev);
   };
-  console.log(menuOpen);
+
   return (
     <>
       <div className="header-container">
@@ -121,7 +120,7 @@ function Header() {
               />
             </div>
           </div>
-          
+
           <div className={menuOpen ? "row-2 row-2-block-active" : "row-2"}>
             <MenuClose
               onClick={menuCloseClickHandler}

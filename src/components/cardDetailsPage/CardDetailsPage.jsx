@@ -1,10 +1,11 @@
 import "./CardDetailsPage.scss";
 import AboveHeader from "./components/aboveHeader/AboveHeader";
+import BreadCrumps from "./components/breadcrumbs/Breadcrumbs";
 import CardDetals from "./components/cardDetails/CardDetails";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import TabsContainer from "./components/tabsContainer/TabsContainer";
-import Visas from "./components/visa/Visas";
+import PaymentBox from "./components/visa/PaymentBox";
 
 function Card() {
   return (
@@ -13,13 +14,13 @@ function Card() {
       <Header />
       <div className="card-details-page-body-container">
         <div className="card-details-page-body">
-          <div className="pag"><span className="pag1"> Home / Produkte / Fliesen / </span><span className="pag2">Zementfliesen</span></div>
+          <BreadCrumps className="pag" />
           <CardDetals />
           <TabsContainer />
-          <Visas />
+          <PaymentBox />
         </div>
       </div>
-        <Footer />
+      <Footer />
     </div>
   );
 }

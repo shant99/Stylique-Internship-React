@@ -11,7 +11,6 @@ function CardDetals() {
   let { productImages } = useSelector((state) => state.cardDetailsPage_Slice);
   const dispatch = useDispatch();
   const [productImgZoom, setProductImgZoom] = useState(0);
-
   const imgClickHandler = (e, index) => setProductImgZoom(index);
 
   useEffect(() => {
@@ -35,18 +34,16 @@ function CardDetals() {
               arr={productImages}
               className="product-image"
               imgClickHandler={imgClickHandler}
-              slidesToShow = {3}
-              slidesToScroll = {3}
+              slidesToShow={3}
+              slidesToScroll={3}
               dots={false}
-            />
-          </div>
-          <div className="main-carousel-response">
-            <Carousel
-              arr={productImages}
-              className="product-image-response"
-              imgClickHandler={imgClickHandler}
-              slidesToShow={1}
-              slidesToScroll ={1}
+              responsive={{
+                breakpoint1: {
+                  breakpoint: 1000,
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                },
+              }}
             />
           </div>
         </div>

@@ -1,91 +1,89 @@
-.footer-container{
-    width: 100%;
-    background-color: #FAFAFA;
-    // display: none;
-    .footer{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        justify-items: center;
-        padding: 80px  0 ;
-        &  ul >  li {
-
-            margin-bottom: 4px;
-            white-space: normal;
-            display: flex;
-            align-items: center;
-        }
-        & li:first-child{
-            font-family: "EudoxusSansMedium";
-            margin-bottom: 25px;
-        }
-        & li:nth-child(4){
-            font-family: "EudoxusSansMedium";
-            margin-bottom: 16px;
-        }
-        &  ul >  li a{
-            margin-bottom: 4px;
-            color:#191919;
-            text-decoration: none;
-            font-family: "EudoxusSansLight";
-            white-space: nowrap;
-        }
-        &  ul >  li span{
-            margin-right: 30px;
-            white-space: normal;
-        }
-        
+@import "../../../../scss/variables.scss";
+.footer-container {
+  width: 100%;
+  background-color: $stylique-grey-7;
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    padding: 80px 0;
+    & ul > li {
+      margin-bottom: 4px;
+      white-space: normal;
+      display: flex;
+      align-items: center;
     }
+    & li:first-child {
+      font-family: "EudoxusSansMedium";
+      margin-bottom: 25px;
+    }
+    & li:nth-child(4) {
+      font-family: "EudoxusSansMedium";
+      margin-bottom: 16px;
+    }
+    & ul > li a {
+      margin-bottom: 4px;
+      color: #191919;
+      text-decoration: none;
+      font-family: "EudoxusSansLight";
+      white-space: nowrap;
+    }
+    & ul > li span {
+      margin-right: 30px;
+      white-space: normal;
+    }
+  }
 }
 
-@media (max-width: 1260px){
-    .footer-container{
-        width: 100% !important;
-        padding: 24px;
-    }
-    .footer{
-        display: grid !important;
-        grid-template-columns: repeat(3 , 1fr) !important;
-        justify-items: start !important;
-        gap: 88px !important;
-        padding: 0 !important;
-    }
+@media (max-width: 1260px) {
+  .footer-container {
+    width: 100% !important;
+    padding: 24px;
+  }
+  .footer {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    justify-items: start !important;
+    gap: 88px !important;
+    padding: 0 !important;
+  }
 }
-@media (max-width: 765px){
-    .footer-container{
-        width: 100% !important;
-        padding: 24px;
-    }
-    .footer{
-        display: grid !important;
-        grid-template-columns: repeat(2 , 1fr) !important;
-        justify-items: start !important;
-        gap: 48px !important;
-        padding: 0 !important;
-    }
+@media (max-width: 765px) {
+  .footer-container {
+    width: 100% !important;
+    padding: 24px;
+  }
+  .footer {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    justify-items: start !important;
+    gap: 48px !important;
+    padding: 0 !important;
+  }
 }
-@media (max-width: 620px){
-    .footer-container{
-        width: 100% !important;
-        padding: 24px;
+@media (max-width: 620px) {
+  .footer-container {
+    width: 100% !important;
+    padding: 24px;
+  }
+  .footer {
+    display: grid !important;
+    grid-template-columns: repeat(1, 1fr) !important;
+    justify-items: start !important;
+    gap: 8px !important;
+    padding: 0 !important;
+    font-size: 13px !important;
+    & .footer-visa-icon {
+      width: 43px !important;
+      height: 14px !important;
     }
-    .footer{
-        display: grid !important;
-        grid-template-columns: repeat(1 , 1fr) !important;
-        justify-items: start !important;
-        gap: 8px !important;
-        padding: 0 !important;
-        font-size: 13px !important;
-        & .footer-visa-icon{
-            width: 43px !important;
-            height: 14px !important;
-        }
-        & .footer-maestro-icon{
-            width: 52px !important;
-            height: 26px !important;
-        }
-        & .footer-masterCard-icon{
-            width: 52px !important;
-            height: 26px !important;
-        }
+    & .footer-maestro-icon {
+      width: 52px !important;
+      height: 26px !important;
     }
+    & .footer-masterCard-icon {
+      width: 52px !important;
+      height: 26px !important;
+    }
+  }
 }

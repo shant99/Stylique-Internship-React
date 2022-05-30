@@ -1,3 +1,4 @@
+@import '../../../../scss/variables.scss';
 .manufacter-info-container {
   max-height: 537px;
   overflow-block: auto;
@@ -75,7 +76,7 @@ overflow-y: scroll;
         }
       }
       .atributes1-button-wrapper-active {
-        border: 1px solid #464646;
+        border: 1px solid $stylique-grey-2;
       }
     }
   }

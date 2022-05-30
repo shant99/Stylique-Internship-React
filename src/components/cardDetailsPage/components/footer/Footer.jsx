@@ -104,10 +104,11 @@ function Footer() {
             </li>
             <br />
             <li>
-             E-Mail: <a href="mailto:team@stylique.de">team@stylique.de</a>
+              E-Mail: <a href="mailto:team@stylique.de">team@stylique.de</a>
             </li>
             <li>
-            Telefon:<a href="tel: +49 211 936 7 50 50"> +49 211 936 7 50 50</a>
+              Telefon:
+              <a href="tel: +49 211 936 7 50 50"> +49 211 936 7 50 50</a>
             </li>
             <br />
             <li>
